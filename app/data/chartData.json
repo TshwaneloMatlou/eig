@@ -1,0 +1,42 @@
+{
+  "charts": [
+    {
+      "id": 1,
+      "pair": "EURUSD",
+      "description": "\n Direction: [ SELL ], \n Stop Loss: [ 1.25684 ], \n Take Profit 1: [ 1.26846 ], \n Take Profit 2: [ 1.98452 ]",
+      "date": "2023/08/05",
+      "chartCode": "EU_5Aug23_1",
+      "updated": "Yes",
+      "profitLoss": "Profit",
+      "weeklyImages": ["image1.jpg", "image1_zoom.png"],
+      "weeklyDescription": "Head & Shoulder",
+      "dailyImages": ["image1.jpg", "image1_zoom.png", "image1.jpg", "image1.jpg", "image1.jpg"],
+      "dailyDescription": "Head & Shoulder",
+      "hours4Images": ["image1.jpg", "image1_zoom.png", "image1.jpg", "image1.jpg", "image1.jpg", "image1.jpg", "image1.jpg"],
+      "hours4Description": "Head & Shoulder",
+      "hour1Images": ["image1.jpg", "image1.jpg", "image1.jpg", "image1.jpg", "image1.jpg", "image1.jpg", "image1.jpg", "image1.jpg", "image1.jpg"],
+      "hour1Description": "Double Bottom",
+      "minutes30Images": ["image1.jpg", "image1_zoom.png", "image1.jpg", "image1.jpg"],
+      "minutes30Description": "Double Bottom"
+    },
+    {
+      "id": 2,
+      "pair": "GBPUSD",
+      "description": "\n Direction: [ SELL ], \n Stop Loss: [ 1.25684 ], \n Take Profit 1: [ 1.26846 ], \n Take Profit 2: [ 1.98452 ]",
+      "date": "2023/08/05",
+      "chartCode": "EU_5Aug23_1",
+      "updated": "Yes",
+      "profitLoss": "Profit",
+      "weeklyImages": ["image1.jpg", "image1_zoom.png"],
+      "weeklyDescription": "Head & Shoulder",
+      "dailyImages": ["image1.jpg", "image1_zoom.png", "image1.jpg", "image1.jpg", "image1.jpg"],
+      "dailyDescription": "Head & Shoulder",
+      "hours4Images": ["image1.jpg", "image1_zoom.png", "image1.jpg", "image1.jpg", "image1.jpg", "image1.jpg", "image1.jpg"],
+      "hours4Description": "Head & Shoulder",
+      "hour1Images": ["image1.jpg", "image1.jpg", "image1.jpg", "image1.jpg", "image1.jpg", "image1.jpg", "image1.jpg", "image1.jpg", "image1.jpg"],
+      "hour1Description": "Double Bottom",
+      "minutes30Images": ["image1.jpg", "image1_zoom.png", "image1.jpg", "image1.jpg"],
+      "minutes30Description": "Double Bottom"
+    }
+  ]
+}
