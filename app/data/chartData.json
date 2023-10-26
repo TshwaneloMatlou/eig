@@ -3,7 +3,8 @@
     {
       "id": 1,
       "pair": "EURUSD",
-      "description": "\n Direction: [ SELL ], \n Stop Loss: [ 1.25684 ], \n Take Profit 1: [ 1.26846 ], \n Take Profit 2: [ 1.98452 ]",
+      "description": "[ BUY ], \n Price: [ 1.25684 ], \n Stop Loss: [ 1.25684 ], \n Take Profit 1: [ 1.26846 ], \n Take Profit 2: [ 1.98452 ]",
+      "description2": "[ SELL ], \n Price: [ 1.25684 ], \n Stop Loss: [ 1.25684 ], \n Take Profit 1: [ 1.26846 ], \n Take Profit 2: [ 1.98452 ]",
       "date": "2023/08/05",
       "chartCode": "EU_5Aug23_1",
       "updated": "Yes",
@@ -24,7 +25,8 @@
     {
       "id": 2,
       "pair": "GBPUSD",
-      "description": "\n Direction: [ SELL ], \n Stop Loss: [ 1.25684 ], \n Take Profit 1: [ 1.26846 ], \n Take Profit 2: [ 1.98452 ]",
+      "description": "[ BUY ], \n Price: [ 1.25684 ], \n Stop Loss: [ 1.25684 ], \n Take Profit 1: [ 1.26846 ], \n Take Profit 2: [ 1.98452 ]",
+      "description2": "[ SELL ], \n Price: [ 1.25684 ], \n Stop Loss: [ 1.25684 ], \n Take Profit 1: [ 1.26846 ], \n Take Profit 2: [ 1.98452 ]",
       "date": "2023/08/05",
       "chartCode": "EU_5Aug23_1",
       "updated": "Yes",

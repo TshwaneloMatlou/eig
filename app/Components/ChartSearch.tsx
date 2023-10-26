@@ -70,7 +70,7 @@ const ChartSearch: React.FC = () => {
                 </h1>
                 <p className="font-semibold mt-5">Chart Code: <br /> {chart.chartCode}</p>   
                 <p className="font-semibold whitespace-pre-line my-5 p-5 shadow-md shadow-blue-500">
-                  {chart.description}
+                  {chart.description} 
                 </p>
                 <p className="font-semibold mb-5">Date: <br /> {chart.date}</p>
                 <p className="font-semibold mb-5">Updated: {chart.updated}</p>            

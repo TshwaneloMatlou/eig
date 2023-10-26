@@ -80,9 +80,9 @@ export default function Page({ params }: { params: { id: string } }) {
             {filteredData.map((chart: any) => (
               <div
                 key={chart.id}
-                className="bg-green-400 text-white p-2 rounded-md font-bold"
+                className="text-white p-2 rounded-md font-bold"
               >
-                <h1 className="text-red-500 bg-white text-center italic font-bold text-lg underline rounded-md">
+                <h1 className="text-red-500 bg-black text-center italic font-bold text-lg underline rounded-md">
                   {chart.pair}
                 </h1>
 
@@ -95,8 +95,8 @@ export default function Page({ params }: { params: { id: string } }) {
                             src="/eig_logo.jpg"
                             alt="Logo"
                             className="rounded-lg fill cover mx-auto"
-                            width={350}
-                            height={300}
+                            width={120}
+                            height={120}
                           />
                         </Link>
                       </div>
@@ -177,7 +177,7 @@ export default function Page({ params }: { params: { id: string } }) {
     // Define a component to display a specific chart type with images and descriptions
     function ChartTypeGallery({ chartType, images, description, openLightbox }: any) {
       return (
-        <div className="shadow shadow-red-500 p-2 m-1 rounded">
+        <div className="shadow-md shadow-red-500 p-2 m-5 rounded">
           <p className="bg-blue-800 p-2 my-2 rounded-lg text-center">{chartType}</p>
           <div className="grid grid-cols-3 gap-3 p-2 h-[170px] max-h-[170px] overflow-y-auto bg-black rounded-lg">
             {images.map((image: string, imageIndex: number) => (
