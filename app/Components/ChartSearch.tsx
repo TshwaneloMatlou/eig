@@ -25,9 +25,9 @@ const ChartSearch: React.FC = () => {
 
 
   return (
-    <div className="p-4 md:p-6 lg:p-8 shadow-lg shadow-green-500 m-5">
+    <div className="p-4 md:p-6 lg:p-8 m-5">
       <h2 className="text-center font-semibold bg-green-300 mb-5 rounded-3xl">Trades</h2>
-      <div className="flex flex-cols-6 justify-center mb-5 p-5 bg-gray-100">
+      <div className="flex justify-center mb-5 p-5">
         <input
           type="date"
           className="border border-gray-300 rounded-md p-2 mr-2"
