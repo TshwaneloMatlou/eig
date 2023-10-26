@@ -210,19 +210,20 @@ export default function Page({ params }: { params: { id: string } }) {
       );
     }
 
-    // Custom Lightbox component
-    function Lightbox({
+      function Lightbox({
         image,
         onClose,
         isZoomed,
         onZoomIn,
         onZoomOut,
+        onResetZoom,
       }: {
         image: string;
         onClose: () => void;
         isZoomed: boolean;
         onZoomIn: () => void;
         onZoomOut: () => void;
+        onResetZoom: () => void;
       }) {
       return (
         <div className="lightbox flex flex-col items-center">
