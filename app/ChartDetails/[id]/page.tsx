@@ -10,6 +10,7 @@ export default function Page({ params }: { params: { id: string } }) {
   const [filterId, setFilterId] = useState(params.id);
   const [filteredData, setFilteredData] = useState(data.charts);
   const [lightboxImage, setLightboxImage] = useState('');
+  const [zoomLevel, setZoomLevel] = useState(100);
 
   const handleFilter = () => {
     const idToFilter = parseInt(filterId, 10);
@@ -31,6 +32,16 @@ export default function Page({ params }: { params: { id: string } }) {
   // Function to close the lightbox
   const closeLightbox = () => {
     setLightboxImage('');
+  };
+
+  // Function to handle zoom in
+  const handleZoomIn = () => {
+    setZoomLevel(Math.min(200, zoomLevel + 10)); // Adjust the max zoom level as needed
+  };
+
+  // Function to handle zoom out
+  const handleZoomOut = () => {
+    setZoomLevel(Math.max(100, zoomLevel - 10)); // Adjust the min zoom level as needed
   };
 
   return (
@@ -109,6 +120,9 @@ export default function Page({ params }: { params: { id: string } }) {
         <Lightbox
           image={lightboxImage}
           onClose={closeLightbox}
+          zoomLevel={zoomLevel}
+          onZoomIn={handleZoomIn}
+          onZoomOut={handleZoomOut}
         />
       )}
     </div>
@@ -188,17 +202,23 @@ export default function Page({ params }: { params: { id: string } }) {
     }
 
     // Custom Lightbox component (you can use the one you created)
-    function Lightbox({ image, onClose }: any) {
+    function Lightbox({ image, onClose, zoomLevel, onZoomIn, onZoomOut }: any) {
       return (
         <div className="fixed top-0 left-0 w-screen h-screen bg-black flex items-center justify-center">
-          <Image
-            src={`/trades/${image}`}
-            alt="Lightbox Image"
-            width={800}
-            height={800}
-            className="rounded-lg max-w-full max-h-full cursor-pointer"
-            onClick={onClose}
-          />
+          <div className="lightbox-container">
+            <Image
+              src={`/trades/${image}`}
+              alt="Lightbox Image"
+              width={zoomLevel * 8}
+              height={zoomLevel * 8}
+              className="rounded-lg max-w-full max-h-full cursor-pointer"
+              onClick={onClose}
+            />
+            <div className="zoom-buttons text-center">
+              <button className='px-8 m-5 font-extrabold rounded-lg bg-green-500' onClick={onZoomIn}> + </button>
+              <button className='px-8 m-5 font-extrabold rounded-lg bg-green-500' onClick={onZoomOut}> - </button>
+            </div>
+          </div>
         </div>
       );
     }
