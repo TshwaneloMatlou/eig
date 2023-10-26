@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* styles.css */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
+  
+  .lightbox-image {
+    max-width: 100%;
+    max-height: 100%;
+    cursor: pointer;
+    transition: transform 0.3s;
+    transform-origin: center center;
+  }
+  
+  .lightbox-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    background: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 24px;
+  }
+  

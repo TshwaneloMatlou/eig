@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+
 // Define your custom Lightbox component here (use the provided code or create your own)
 
 export default function Page({ params }: { params: { id: string } }) {
@@ -10,6 +11,7 @@ export default function Page({ params }: { params: { id: string } }) {
   const [filterId, setFilterId] = useState(params.id);
   const [filteredData, setFilteredData] = useState(data.charts);
   const [lightboxImage, setLightboxImage] = useState('');
+  const [isZoomed, setIsZoomed] = useState(false);
   const [zoomLevel, setZoomLevel] = useState(100);
 
   const handleFilter = () => {
@@ -32,16 +34,22 @@ export default function Page({ params }: { params: { id: string } }) {
   // Function to close the lightbox
   const closeLightbox = () => {
     setLightboxImage('');
+    setIsZoomed(false); // Reset zoom state
   };
 
   // Function to handle zoom in
   const handleZoomIn = () => {
-    setZoomLevel(Math.min(200, zoomLevel + 10)); // Adjust the max zoom level as needed
+    setIsZoomed(true);
   };
 
   // Function to handle zoom out
   const handleZoomOut = () => {
-    setZoomLevel(Math.max(100, zoomLevel - 10)); // Adjust the min zoom level as needed
+    setIsZoomed(false);
+  };
+
+  const resetZoom = () => {
+    // Implement the logic to reset the image zoom here
+    setZoomLevel(100); // Example: You may want to set the zoom level back to 100
   };
 
   return (
@@ -82,8 +90,8 @@ export default function Page({ params }: { params: { id: string } }) {
                 key={chart.id}
                 className="text-white p-2 rounded-md font-bold"
               >
-                <h1 className="text-red-500 bg-black text-center italic font-bold text-lg underline rounded-md">
-                  {chart.pair}
+                <h1 className="text-red-500 bg-black text-center italic font-bold text-lg underline rounded-xl p-2">
+                 [{chart.id}] - {chart.pair}
                 </h1>
 
                 <div>
@@ -120,9 +128,10 @@ export default function Page({ params }: { params: { id: string } }) {
         <Lightbox
           image={lightboxImage}
           onClose={closeLightbox}
-          zoomLevel={zoomLevel}
+          isZoomed={isZoomed}
           onZoomIn={handleZoomIn}
           onZoomOut={handleZoomOut}
+          onResetZoom={resetZoom}
         />
       )}
     </div>
@@ -201,24 +210,41 @@ export default function Page({ params }: { params: { id: string } }) {
       );
     }
 
-    // Custom Lightbox component (you can use the one you created)
-    function Lightbox({ image, onClose, zoomLevel, onZoomIn, onZoomOut }: any) {
+    // Custom Lightbox component
+    function Lightbox({
+        image,
+        onClose,
+        isZoomed,
+        onZoomIn,
+        onZoomOut,
+      }: {
+        image: string;
+        onClose: () => void;
+        isZoomed: boolean;
+        onZoomIn: () => void;
+        onZoomOut: () => void;
+      }) {
       return (
-        <div className="fixed top-0 left-0 w-screen h-screen bg-black flex items-center justify-center">
-          <div className="lightbox-container">
+        <div className="lightbox flex flex-col items-center">
+          <button
+            className="lightbox-button text-2xl absolute right-3 top-3"
+            onClick={onClose}
+          >
+            &times;
+          </button>
+          <div
+            className={`lightbox-image-container ${isZoomed ? 'zoomed' : ''}`}
+          >
             <Image
               src={`/trades/${image}`}
               alt="Lightbox Image"
-              width={zoomLevel * 8}
-              height={zoomLevel * 8}
-              className="rounded-lg max-w-full max-h-full cursor-pointer"
-              onClick={onClose}
+              width={isZoomed ? 1200 : 500}
+              height={isZoomed ? 600 : 300}
+              onClick={() => (isZoomed ? onZoomOut() : onZoomIn())}
             />
-            <div className="zoom-buttons text-center">
-              <button className='px-8 m-5 font-extrabold rounded-lg bg-green-500' onClick={onZoomIn}> + </button>
-              <button className='px-8 m-5 font-extrabold rounded-lg bg-green-500' onClick={onZoomOut}> - </button>
-            </div>
           </div>
         </div>
       );
     }
+    
+
