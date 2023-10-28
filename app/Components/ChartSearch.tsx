@@ -23,7 +23,7 @@ const ChartSearch: React.FC = () => {
     setFilteredData(data.charts);
   };
 
-
+ 
   return (
     <div className="p-4 md:p-6 lg:p-8 m-5">
       <h2 className="text-center font-semibold bg-green-300 mb-5 rounded-3xl">Trades</h2>
@@ -58,10 +58,10 @@ const ChartSearch: React.FC = () => {
         </div>
       </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-9 md:grid-cols-2 lg:grid-cols-3">
           {filteredData.map((chart: any) => (
             <div
-              className="p-4 border-2 shadow-md shadow-green-500 hover:shadow-2xl hover:shadow-blue-500 rounded-lg"
+              className="p-4 border-2 shadow-md shadow-green-500 hover:shadow-md hover:shadow-blue-500 rounded-lg"
               key={chart.id}
             >
               <Link href={`/ChartDetails/${chart.id}`} className="block">

@@ -63,10 +63,10 @@ export default function Page({ params }: { params: { id: string } }) {
         hidden
       />
 
-      <div className="grid grid-cols-1 gap-2 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-2 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3">
         {filteredData.map((chart: any) => (
           <div
-            className="p-4 border-2 my-2 mx-auto h-[410px] shadow-lg shadow-green-500 rounded-lg"
+            className="p-4 border-2 my-2 mx-auto h-[550px] shadow-lg shadow-green-500 rounded-lg"
             key={chart.id}
           >
             <h1 className="text-red-500 bg-white text-center italic font-bold text-lg underline rounded-md">
@@ -83,7 +83,7 @@ export default function Page({ params }: { params: { id: string } }) {
           </div>
         ))}
 
-        <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 rounded-lg col-span-3 p-3">
+        <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 rounded-lg col-span-2 p-2">
           <div>
             {filteredData.map((chart: any) => (
               <div
@@ -247,5 +247,3 @@ export default function Page({ params }: { params: { id: string } }) {
         </div>
       );
     }
-    
-

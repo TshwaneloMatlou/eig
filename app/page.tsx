@@ -24,7 +24,9 @@ const page = () => {
             <Image
               src="/eig_logo.jpg"
               alt="Logo"
-              className="w-[450px] h-[450px] pb-9 mx-auto"
+              width={450}
+              height={450}
+              className="pb-9 mx-auto"
             />
           </div>
         </div>
