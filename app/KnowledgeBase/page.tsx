@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const KnowledgeBase = () => {
   return (
@@ -110,6 +111,76 @@ const KnowledgeBase = () => {
         <p>
           Example 2: With 1:100 leverage, you can control a $100,000 position with $1,000 in your account.
         </p>
+      </div>
+
+      <div className='bg-gray-100 grid gap-4 grid-cols-2 my-5'>
+        <div className='grid gap-4 grid-cols-2 shadow-md shadow-blue-500 p-3 h-[350px] overflow-y-auto'>
+          <h1 className='col-span-2 text-center shadow-md shadow-red-500'>Head & Shoulders Description</h1>
+          <div>
+            <Image
+                src="/knowledgeBase/head-and-shoulders-before-inverse.PNG"
+                alt="Head & Shoulders"
+                width={450}
+                height={450}
+                className="mx-auto"
+            />
+          </div>
+          <div>
+            <Image
+                src="/knowledgeBase/Head-and-Shoulders-Pattern-Inverted.PNG"
+                alt="Head & Shoulders"
+                width={450}
+                height={450}
+                className="mx-auto"
+            />
+          </div>
+          <div>
+            <Image
+                src="/knowledgeBase/head-and-shoulders-before.PNG"
+                alt="Head & Shoulders"
+                width={450}
+                height={450}
+                className="mx-auto"
+            />
+          </div>
+          <div>
+            <Image
+                src="/knowledgeBase/head-and-shoulders-inverse-before.PNG"
+                alt="Head & Shoulders"
+                width={450}
+                height={450}
+                className="mx-auto"
+            />
+          </div>
+        </div>
+        <div className='grid grid-cols-2'>
+          <h1 className='col-span-2 text-center'>Double Top Description</h1>
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+        </div>
+        <div className='grid grid-cols-2'>
+          <h1 className='col-span-2 text-center'>Double Bottom Description</h1>
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+        </div>
+        <div className='grid grid-cols-2'>
+          <h1 className='col-span-2 text-center'>Triple Top Description</h1>
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+        </div>
+        <div className='grid grid-cols-2'>
+          <h1 className='col-span-2 text-center'>Triple Bottom Description</h1>
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+        </div>
       </div>
     </div>
   );
