@@ -114,6 +114,60 @@ const KnowledgeBase = () => {
       </div>
 
       <div>
+        <h1 className='bg-red-100 flex justify-center my-5 shadow shadow-red-500'>Forex Candlestick Patterns</h1>
+        <div className='text-center pt-5 font-extrabold underline'>
+          <h1>Pinbar</h1>
+        </div>
+        <div 
+          className='grid gap-3 
+                     sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-4 
+                     shadow-md shadow-blue-500 p-2 m-3 
+                     w-auto h-[350px] overflow-y-auto'
+        >
+          <div>
+            <p>Description:</p>
+              <Image
+                  src=""
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
+          </div>
+          <div>
+            <p>Description:</p>
+              <Image
+                  src=""
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
+          </div>
+          <div>
+            <p>Description:</p>
+              <Image
+                  src=""
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
+          </div>
+          <div>
+            <p>Description:</p>
+              <Image
+                  src=""
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
+          </div>
+        </div>
+      </div>
+
+      <div>
         <h1 className='bg-red-100 flex justify-center my-5 shadow shadow-red-500'>Forex Chart Patterns</h1>
         <div className='text-center pt-5 font-extrabold underline'>
           <h1>Head and Shoulders</h1>
