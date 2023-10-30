@@ -122,43 +122,47 @@ const KnowledgeBase = () => {
           className='grid gap-3 
                      sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-4 
                      shadow-md shadow-blue-500 p-2 m-3 
-                     w-auto h-[350px] overflow-x-auto'
+                     w-auto h-[350px] overflow-y-auto'
         >
           <div>
-            <Image
-                src="/knowledgeBase/head-and-shoulders-before-inverse.png"
-                alt="Head & Shoulders"
-                width={250}
-                height={250}
-                className="mx-auto my-5 h-[250px]"
-            />
+            <p>Description:</p>
+              <Image
+                  src="/knowledgeBase/head-and-shoulders-before-inverse.png"
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
           </div>
           <div>
-            <Image
-                src="/knowledgeBase/head-and-shoulders-before.png"
-                alt="Head & Shoulders"
-                width={250}
-                height={250}
-                className="mx-auto my-5 h-[250px]"
-            />
+            <p>Description:</p>
+              <Image
+                  src="/knowledgeBase/head-and-shoulders-before.png"
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
           </div>
           <div>
-            <Image
-                src="/knowledgeBase/Head-and-Shoulders-Pattern-Inverted.png"
-                alt="Head & Shoulders"
-                width={250}
-                height={250}
-                className="mx-auto my-5 h-[250px]"
-            />
+            <p>Description:</p>
+              <Image
+                  src="/knowledgeBase/Head-and-Shoulders-Pattern-Inverted.png"
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
           </div>
           <div>
-            <Image
-                src="/knowledgeBase/head-and-shoulders-inverse-before.png"
-                alt="Head & Shoulders"
-                width={250}
-                height={250}
-                className="mx-auto my-5 h-[250px]"
-            />
+            <p>Description:</p>
+              <Image
+                  src="/knowledgeBase/head-and-shoulders-inverse-before.png"
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
           </div>
         </div>
 
@@ -172,40 +176,44 @@ const KnowledgeBase = () => {
                      w-auto h-[350px] overflow-x-auto'
         >
           <div>
-            <Image
-                src="/knowledgeBase/double-top.png"
-                alt="Head & Shoulders"
-                width={250}
-                height={250}
-                className="mx-auto my-5 h-[250px]"
-            />
+            <p>Description:</p>
+              <Image
+                  src="/knowledgeBase/double-top.png"
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
           </div>
           <div>
-            <Image
-                src="/knowledgeBase/double-top-pattern.png"
-                alt="Head & Shoulders"
-                width={250}
-                height={250}
-                className="mx-auto my-5 h-[250px]"
-            />
+            <p>Description:</p>
+              <Image
+                  src="/knowledgeBase/double-top-pattern.png"
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
           </div>
           <div>
-            <Image
-                src="/knowledgeBase/Double-Bottom.png"
-                alt="Head & Shoulders"
-                width={250}
-                height={250}
-                className="mx-auto my-5 h-[250px]"
-            />
+            <p>Description:</p>
+              <Image
+                  src="/knowledgeBase/Double-Bottom.png"
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
           </div>
           <div>
-            <Image
-                src="/knowledgeBase/double-bottom2.png"
-                alt="Head & Shoulders"
-                width={250}
-                height={250}
-                className="mx-auto my-5 h-[250px]"
-            />
+            <p>Description:</p>
+              <Image
+                  src="/knowledgeBase/double-bottom2.png"
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
           </div>
         </div>
 
@@ -219,40 +227,44 @@ const KnowledgeBase = () => {
                      w-auto h-[350px] overflow-x-auto'
         >
           <div>
-            <Image
-                src="/knowledgeBase/triple-top.png"
-                alt="Head & Shoulders"
-                width={250}
-                height={250}
-                className="mx-auto my-5 h-[250px]"
-            />
+            <p>Description:</p>
+              <Image
+                  src="/knowledgeBase/triple-top.png"
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
           </div>
           <div>
-            <Image
-                src="/knowledgeBase/triple top.png"
-                alt="Head & Shoulders"
-                width={250}
-                height={250}
-                className="mx-auto my-5 h-[250px]"
-            />
+            <p>Description:</p>
+              <Image
+                  src="/knowledgeBase/triple top.png"
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
           </div>
           <div>
-            <Image
-                src="/knowledgeBase/triple-bottom.png"
-                alt="Head & Shoulders"
-                width={250}
-                height={250}
-                className="mx-auto my-5 h-[250px]"
-            />
+            <p>Description:</p>
+              <Image
+                  src="/knowledgeBase/triple-bottom.png"
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
           </div>
           <div>
-            <Image
-                src="/knowledgeBase/Triple-Bottom-chart-pattern-2_investopower-1.png"
-                alt="Head & Shoulders"
-                width={250}
-                height={250}
-                className="mx-auto my-5 h-[250px]"
-            />
+            <p>Description:</p>
+              <Image
+                  src="/knowledgeBase/Triple-Bottom-chart-pattern-2_investopower-1.png"
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
           </div>
         </div>
 
