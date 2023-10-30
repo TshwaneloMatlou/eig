@@ -113,49 +113,49 @@ const KnowledgeBase = () => {
         </p>
       </div>
 
-      <div className='bg-gray-100'>
+      <div>
         <div className='text-center pt-5 font-extrabold underline'>
           <h1>Head and Shoulders</h1>
         </div>
         <div 
-          className='grid gap-5 
+          className='grid gap-3 
                      sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-4 
-                     shadow-md shadow-blue-500 p-3 m-3 
+                     shadow-md shadow-blue-500 p-2 m-3 
                      w-auto h-[350px] overflow-x-auto'
         >
           <div>
             <Image
                 src="/knowledgeBase/head-and-shoulders-before-inverse.png"
                 alt="Head & Shoulders"
-                width={450}
-                height={450}
+                width={250}
+                height={250}
                 className="mx-auto my-5 h-[250px]"
             />
           </div>
           <div>
             <Image
-                src="/knowledgeBase/head-and-shoulders-before.PNG"
+                src="/knowledgeBase/head-and-shoulders-before.png"
                 alt="Head & Shoulders"
-                width={450}
-                height={450}
+                width={250}
+                height={250}
                 className="mx-auto my-5 h-[250px]"
             />
           </div>
           <div>
             <Image
-                src="/knowledgeBase/Head-and-Shoulders-Pattern-Inverted.PNG"
+                src="/knowledgeBase/Head-and-Shoulders-Pattern-Inverted.png"
                 alt="Head & Shoulders"
-                width={450}
-                height={450}
+                width={250}
+                height={250}
                 className="mx-auto my-5 h-[250px]"
             />
           </div>
           <div>
             <Image
-                src="/knowledgeBase/head-and-shoulders-inverse-before.PNG"
+                src="/knowledgeBase/head-and-shoulders-inverse-before.png"
                 alt="Head & Shoulders"
-                width={450}
-                height={450}
+                width={250}
+                height={250}
                 className="mx-auto my-5 h-[250px]"
             />
           </div>
@@ -174,35 +174,35 @@ const KnowledgeBase = () => {
             <Image
                 src="/knowledgeBase/double-top.png"
                 alt="Head & Shoulders"
-                width={450}
-                height={450}
+                width={250}
+                height={250}
                 className="mx-auto my-5 h-[250px]"
             />
           </div>
           <div>
             <Image
-                src="/knowledgeBase/double-top-pattern.PNG"
+                src="/knowledgeBase/double-top-pattern.png"
                 alt="Head & Shoulders"
-                width={450}
-                height={450}
+                width={250}
+                height={250}
                 className="mx-auto my-5 h-[250px]"
             />
           </div>
           <div>
             <Image
-                src="/knowledgeBase/Double-Bottom.PNG"
+                src="/knowledgeBase/Double-Bottom.png"
                 alt="Head & Shoulders"
-                width={450}
-                height={450}
+                width={250}
+                height={250}
                 className="mx-auto my-5 h-[250px]"
             />
           </div>
           <div>
             <Image
-                src="/knowledgeBase/double-bottom2.PNG"
+                src="/knowledgeBase/double-bottom2.png"
                 alt="Head & Shoulders"
-                width={450}
-                height={450}
+                width={250}
+                height={250}
                 className="mx-auto my-5 h-[250px]"
             />
           </div>
