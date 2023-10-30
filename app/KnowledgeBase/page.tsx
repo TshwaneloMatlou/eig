@@ -268,6 +268,261 @@ const KnowledgeBase = () => {
           </div>
         </div>
 
+        <div className='text-center pt-5 font-extrabold underline'>
+          <h1>Rising & Falling Wedge</h1>
+        </div>
+        <div 
+          className='grid gap-5 
+                     sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-4 
+                     shadow-md shadow-blue-500 p-3 m-3 
+                     w-auto h-[350px] overflow-x-auto'
+        >
+          <div>
+            <p>Description:</p>
+              <Image
+                  src=""
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
+          </div>
+          <div>
+            <p>Description:</p>
+              <Image
+                  src=""
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
+          </div>
+          <div>
+            <p>Description:</p>
+              <Image
+                  src=""
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
+          </div>
+          <div>
+            <p>Description:</p>
+              <Image
+                  src=""
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
+          </div>
+        </div>
+
+        <div className='text-center pt-5 font-extrabold underline'>
+          <h1>Bullish & Bearish Rectangle</h1>
+        </div>
+        <div 
+          className='grid gap-5 
+                     sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-4 
+                     shadow-md shadow-blue-500 p-3 m-3 
+                     w-auto h-[350px] overflow-x-auto'
+        >
+          <div>
+            <p>Description:</p>
+              <Image
+                  src=""
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
+          </div>
+          <div>
+            <p>Description:</p>
+              <Image
+                  src=""
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
+          </div>
+          <div>
+            <p>Description:</p>
+              <Image
+                  src=""
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
+          </div>
+          <div>
+            <p>Description:</p>
+              <Image
+                  src=""
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
+          </div>
+        </div>
+
+        <div className='text-center pt-5 font-extrabold underline'>
+          <h1>Bullish & Bearish Pennant</h1>
+        </div>
+        <div 
+          className='grid gap-5 
+                     sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-4 
+                     shadow-md shadow-blue-500 p-3 m-3 
+                     w-auto h-[350px] overflow-x-auto'
+        >
+          <div>
+            <p>Description:</p>
+              <Image
+                  src=""
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
+          </div>
+          <div>
+            <p>Description:</p>
+              <Image
+                  src=""
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
+          </div>
+          <div>
+            <p>Description:</p>
+              <Image
+                  src=""
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
+          </div>
+          <div>
+            <p>Description:</p>
+              <Image
+                  src=""
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
+          </div>
+        </div>
+
+        <div className='text-center pt-5 font-extrabold underline'>
+          <h1>Bullish & Bearish Flag</h1>
+        </div>
+        <div 
+          className='grid gap-5 
+                     sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-4 
+                     shadow-md shadow-blue-500 p-3 m-3 
+                     w-auto h-[350px] overflow-x-auto'
+        >
+          <div>
+            <p>Description:</p>
+              <Image
+                  src=""
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
+          </div>
+          <div>
+            <p>Description:</p>
+              <Image
+                  src=""
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
+          </div>
+          <div>
+            <p>Description:</p>
+              <Image
+                  src=""
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
+          </div>
+          <div>
+            <p>Description:</p>
+              <Image
+                  src=""
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
+          </div>
+        </div>
+
+        <div className='text-center pt-5 font-extrabold underline'>
+          <h1>Ascending & Descending & Symmetrical Triangle</h1>
+        </div>
+        <div 
+          className='grid gap-5 
+                     sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-4 
+                     shadow-md shadow-blue-500 p-3 m-3 
+                     w-auto h-[350px] overflow-x-auto'
+        >
+          <div>
+            <p>Description:</p>
+              <Image
+                  src=""
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
+          </div>
+          <div>
+            <p>Description:</p>
+              <Image
+                  src=""
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
+          </div>
+          <div>
+            <p>Description:</p>
+              <Image
+                  src=""
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
+          </div>
+          <div>
+            <p>Description:</p>
+              <Image
+                  src=""
+                  alt="Head & Shoulders"
+                  width={250}
+                  height={250}
+                  className="mx-auto my-5 h-[250px]"
+              />
+          </div>
+        </div>
+
       </div>
     </div>
   );
