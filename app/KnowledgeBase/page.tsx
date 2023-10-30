@@ -11,13 +11,13 @@ const KnowledgeBase = () => {
           <h2 className="text-xl font-semibold mb-2">Basic Terms</h2>
           <ul className="list-disc ml-4">
             <li>
-              <li><strong>Lot:</strong> A standard unit for measuring the quantity of a currency.</li>
+              <strong>Lot:</strong> A standard unit for measuring the quantity of a currency.
             </li>
             <li>
               <strong>Lot Size:</strong> The volume of a single lot, typically 100,000 units.
             </li>
             <li>
-              <li><strong>Points:</strong> Also known as (pipettes,&apos;) the smallest price move in the forex market.</li>
+              <strong>Points:</strong> Also known as (pipettes,&apos;) the smallest price move in the forex market.
             </li>
             <li>
               <strong>Pips:</strong> A unit of measurement representing the change in value between two currencies.
@@ -113,25 +113,23 @@ const KnowledgeBase = () => {
         </p>
       </div>
 
-      <div className='bg-gray-100 grid gap-4 grid-cols-2 my-5'>
-        <div className='grid gap-4 grid-cols-2 shadow-md shadow-blue-500 p-3 h-[350px] overflow-y-auto'>
-          <h1 className='col-span-2 text-center shadow-md shadow-red-500'>Head & Shoulders Description</h1>
+      <div className='bg-gray-100'>
+        <div className='text-center pt-5 font-extrabold underline'>
+          <h1>Head and Shoulders</h1>
+        </div>
+        <div 
+          className='grid gap-5 
+                     sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-4 
+                     shadow-md shadow-blue-500 p-3 m-3 
+                     w-auto h-[350px] overflow-x-auto'
+        >
           <div>
             <Image
-                src="/knowledgeBase/head-and-shoulders-before-inverse.PNG"
+                src="/knowledgeBase/head-and-shoulders-before-inverse.png"
                 alt="Head & Shoulders"
                 width={450}
                 height={450}
-                className="mx-auto"
-            />
-          </div>
-          <div>
-            <Image
-                src="/knowledgeBase/Head-and-Shoulders-Pattern-Inverted.PNG"
-                alt="Head & Shoulders"
-                width={450}
-                height={450}
-                className="mx-auto"
+                className="mx-auto my-5 h-[250px]"
             />
           </div>
           <div>
@@ -140,7 +138,16 @@ const KnowledgeBase = () => {
                 alt="Head & Shoulders"
                 width={450}
                 height={450}
-                className="mx-auto"
+                className="mx-auto my-5 h-[250px]"
+            />
+          </div>
+          <div>
+            <Image
+                src="/knowledgeBase/Head-and-Shoulders-Pattern-Inverted.PNG"
+                alt="Head & Shoulders"
+                width={450}
+                height={450}
+                className="mx-auto my-5 h-[250px]"
             />
           </div>
           <div>
@@ -149,38 +156,58 @@ const KnowledgeBase = () => {
                 alt="Head & Shoulders"
                 width={450}
                 height={450}
-                className="mx-auto"
+                className="mx-auto my-5 h-[250px]"
             />
           </div>
         </div>
-        <div className='grid grid-cols-2'>
-          <h1 className='col-span-2 text-center'>Double Top Description</h1>
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-          <div>4</div>
+
+        <div className='text-center pt-5 font-extrabold underline'>
+          <h1>Double Top & Double Bottom</h1>
         </div>
-        <div className='grid grid-cols-2'>
-          <h1 className='col-span-2 text-center'>Double Bottom Description</h1>
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-          <div>4</div>
+        <div 
+          className='grid gap-5 
+                     sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-4 
+                     shadow-md shadow-blue-500 p-3 m-3 
+                     w-auto h-[350px] overflow-x-auto'
+        >
+          <div>
+            <Image
+                src="/knowledgeBase/double-top.png"
+                alt="Head & Shoulders"
+                width={450}
+                height={450}
+                className="mx-auto my-5 h-[250px]"
+            />
+          </div>
+          <div>
+            <Image
+                src="/knowledgeBase/double-top-pattern.PNG"
+                alt="Head & Shoulders"
+                width={450}
+                height={450}
+                className="mx-auto my-5 h-[250px]"
+            />
+          </div>
+          <div>
+            <Image
+                src="/knowledgeBase/Double-Bottom.PNG"
+                alt="Head & Shoulders"
+                width={450}
+                height={450}
+                className="mx-auto my-5 h-[250px]"
+            />
+          </div>
+          <div>
+            <Image
+                src="/knowledgeBase/double-bottom2.PNG"
+                alt="Head & Shoulders"
+                width={450}
+                height={450}
+                className="mx-auto my-5 h-[250px]"
+            />
+          </div>
         </div>
-        <div className='grid grid-cols-2'>
-          <h1 className='col-span-2 text-center'>Triple Top Description</h1>
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-          <div>4</div>
-        </div>
-        <div className='grid grid-cols-2'>
-          <h1 className='col-span-2 text-center'>Triple Bottom Description</h1>
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-          <div>4</div>
-        </div>
+
       </div>
     </div>
   );
