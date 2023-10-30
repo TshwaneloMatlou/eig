@@ -114,6 +114,7 @@ const KnowledgeBase = () => {
       </div>
 
       <div>
+        <h1 className='bg-red-100 flex justify-center my-5 shadow shadow-red-500'>Forex Chart Patterns</h1>
         <div className='text-center pt-5 font-extrabold underline'>
           <h1>Head and Shoulders</h1>
         </div>
@@ -200,6 +201,53 @@ const KnowledgeBase = () => {
           <div>
             <Image
                 src="/knowledgeBase/double-bottom2.png"
+                alt="Head & Shoulders"
+                width={250}
+                height={250}
+                className="mx-auto my-5 h-[250px]"
+            />
+          </div>
+        </div>
+
+        <div className='text-center pt-5 font-extrabold underline'>
+          <h1>Triple Top & Triple Bottom</h1>
+        </div>
+        <div 
+          className='grid gap-5 
+                     sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-4 
+                     shadow-md shadow-blue-500 p-3 m-3 
+                     w-auto h-[350px] overflow-x-auto'
+        >
+          <div>
+            <Image
+                src="/knowledgeBase/triple-top.png"
+                alt="Head & Shoulders"
+                width={250}
+                height={250}
+                className="mx-auto my-5 h-[250px]"
+            />
+          </div>
+          <div>
+            <Image
+                src="/knowledgeBase/triple top.png"
+                alt="Head & Shoulders"
+                width={250}
+                height={250}
+                className="mx-auto my-5 h-[250px]"
+            />
+          </div>
+          <div>
+            <Image
+                src="/knowledgeBase/triple-bottom.png"
+                alt="Head & Shoulders"
+                width={250}
+                height={250}
+                className="mx-auto my-5 h-[250px]"
+            />
+          </div>
+          <div>
+            <Image
+                src="/knowledgeBase/Triple-Bottom-chart-pattern-2_investopower-1.png"
                 alt="Head & Shoulders"
                 width={250}
                 height={250}
