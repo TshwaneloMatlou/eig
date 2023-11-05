@@ -66,7 +66,7 @@ export default function Page({ params }: { params: { id: string } }) {
       <div className="grid grid-cols-1 gap-2 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3">
         {filteredData.map((chart: any) => (
           <div
-            className="p-4 border-2 my-2 mx-auto h-[550px] shadow-lg shadow-green-500 rounded-lg"
+            className="p-4 border-2 my-2 mx-auto h-[750px] shadow-lg shadow-green-500 rounded-lg"
             key={chart.id}
           >
             <h1 className="text-red-500 bg-white text-center italic font-bold text-lg underline rounded-md">
@@ -80,6 +80,20 @@ export default function Page({ params }: { params: { id: string } }) {
             </p>
             <p className="font-semibold mb-5">Date: <br /> {chart.date}</p>
             <p className="font-semibold mb-5">Updated: {chart.updated}</p>
+
+            {/* Add a section to display a list of all available charts */}
+            <div>
+              <h2 className="text-xl text-center font-bold mb-3 underline">All Available Charts</h2>
+              <ul>
+                {data.charts.map((chart: any) => (
+                  <li key={chart.id}>
+                    <Link href={`/ChartDetails/${chart.id}`}>
+                      <p> * {chart.chartCode}</p>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         ))}
 
@@ -93,31 +107,12 @@ export default function Page({ params }: { params: { id: string } }) {
                 <h1 className="text-red-500 bg-black text-center italic font-bold text-lg underline rounded-xl p-2">
                  [{chart.id}] - {chart.pair}
                 </h1>
-
-                <div>
-                  <div>
-                    <div className="rounded-lg my-2">
-                      <div className="relative">
-                        <Link href={'/Charts'}>
-                          <Image
-                            src="/eig_logo.jpg"
-                            alt="Logo"
-                            className="rounded-lg fill cover mx-auto"
-                            width={120}
-                            height={120}
-                          />
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-
                   <div>
                     <ChartGallery
                       chartData={chart}
                       openLightbox={openLightbox}
                     />
                   </div>
-                </div>
               </div>
             ))}
           </div>
