@@ -128,7 +128,7 @@ export default function Page({ params }: { params: { id: string } }) {
               {filteredLiData.map((chart: any) => (
                 <li key={chart.id}>
                   <Link href={`/ChartDetails/${chart.id}`}>
-                    <p className='my-4'> * {chart.chartCode}</p>
+                    <p className='bg-green-50 hover:bg-blue-200 my-4'> * {chart.chartCode}</p>
                   </Link>
                 </li>
               ))}
