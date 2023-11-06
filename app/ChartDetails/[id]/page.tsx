@@ -13,7 +13,10 @@ export default function Page({ params }: { params: { id: string } }) {
   const [lightboxImage, setLightboxImage] = useState('');
   const [isZoomed, setIsZoomed] = useState(false);
   const [zoomLevel, setZoomLevel] = useState(100);
-  const [selectedMonth, setSelectedMonth] = useState(''); // State to store the selected month
+  const currentDate = new Date();
+  const currentMonth = `${currentDate.getFullYear()}/${(currentDate.getMonth() + 1).toString().padStart(2, '0')}`;
+  const [selectedMonth, setSelectedMonth] = useState(currentMonth);
+
 
   const handleFilter = () => {
     const idToFilter = parseInt(filterId, 10);
@@ -38,6 +41,12 @@ export default function Page({ params }: { params: { id: string } }) {
       setFilteredLiData(data.charts);
     }
   }, [selectedMonth]);
+
+  useEffect(() => {
+    const currentMonth = findCurrentMonth(data.charts);
+    setSelectedMonth(currentMonth);
+  }, []);
+  
 
   // Function to open the lightbox
   const openLightbox = (image: string) => {
@@ -85,35 +94,29 @@ export default function Page({ params }: { params: { id: string } }) {
             <h1 className="text-red-500 bg-white text-center italic font-bold text-lg underline rounded-md">
               [{chart.id}] - {chart.pair}
             </h1>
-            <p className="font-semibold mt-5">
-              Chart Code: <br /> {chart.chartCode}
-            </p>
             <p className="font-semibold whitespace-pre-line my-5 p-5 shadow-md shadow-blue-500">
               {chart.description}
+            </p>
+            <p className="font-semibold my-5">
+              Chart Code: <br /> {chart.chartCode}
             </p>
             <p className="font-semibold mb-5">Date: <br /> {chart.date}</p>
             <p className="font-semibold mb-5">Updated: {chart.updated}</p>
 
-            <label className='mr-2'>Select Month:</label>
+            <label>Select Month:</label>
             <select
               value={selectedMonth}
               onChange={(e) => setSelectedMonth(e.target.value)}
             >
+              <option value={currentMonth}>Current Month</option>
               <option value="">All Months</option>
-              <option value="2023/01">January 2023</option>
-              <option value="2023/02">February 2023</option>
-              <option value="2023/03">March 2023</option>
-              <option value="2023/04">April 2023</option>
-              <option value="2023/05">May 2023</option>
-              <option value="2023/06">June 2023</option>
-              <option value="2023/07">July 2023</option>
-              <option value="2023/08">August 2023</option>
-              <option value="2023/09">September 2023</option>
-              <option value="2023/10">October 2023</option>
-              <option value="2023/11">November 2023</option>
-              <option value="2023/12">December 2023</option>
-              {/* Add options for other months as needed */}
+              {getUniqueMonths(data.charts).map((month: any) => (
+                <option key={month} value={month}>
+                  {formatMonth(month)}
+                </option>
+              ))}
             </select>
+
 
              {/* Add a section to display a list of all available charts */}
             <div className='bg-gray-100 pb-6 pl-2 mt-5'>
@@ -166,6 +169,44 @@ export default function Page({ params }: { params: { id: string } }) {
     </div>
   );
 }
+
+    function findCurrentMonth(charts: any) {
+      const currentDate = new Date();
+      const currentYear = currentDate.getFullYear();
+      const currentMonth = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+
+      for (const chart of charts) {
+        const chartYear = chart.date.split('/')[0];
+        const chartMonth = chart.date.split('/')[1];
+
+        if (chartYear === currentYear && chartMonth === currentMonth) {
+          return `${chartYear}/${chartMonth}`;
+        }
+      }
+
+      return `${currentYear}/${currentMonth}`;
+    }
+
+
+    // Function to get unique months from your data
+    function getUniqueMonths(charts: any) {
+      const uniqueMonths = new Set();
+      charts.forEach((chart: any) => {
+        const month = chart.date.split('/')[0] + '/' + chart.date.split('/')[1];
+        uniqueMonths.add(month);
+      });
+      return Array.from(uniqueMonths);
+    }
+
+    // Function to format the month for display (e.g., from "YYYY/MM" to "Month YYYY")
+    function formatMonth(month: any) {
+      const [year, monthNumber] = month.split('/');
+      const monthNames = [
+        'January', 'February', 'March', 'April', 'May', 'June',
+        'July', 'August', 'September', 'October', 'November', 'December'
+      ];
+      return `${monthNames[parseInt(monthNumber, 10) - 1]} ${year}`;
+    }
 
     // Define a ChartGallery component to display weekly, daily, and other charts
     function ChartGallery({ chartData, openLightbox }: any) {
