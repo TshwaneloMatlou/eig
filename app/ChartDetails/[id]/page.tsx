@@ -79,7 +79,7 @@ export default function Page({ params }: { params: { id: string } }) {
       <div className="grid grid-cols-1 gap-2 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3">
         {filteredData.map((chart: any) => (
           <div
-            className="p-4 border-2 my-2 mx-auto h-[750px] shadow-lg shadow-green-500 rounded-lg"
+            className="p-4 border-2 my-2 mx-auto h-[850px] shadow-lg shadow-green-500 rounded-lg"
             key={chart.id}
           >
             <h1 className="text-red-500 bg-white text-center italic font-bold text-lg underline rounded-md">
@@ -94,7 +94,7 @@ export default function Page({ params }: { params: { id: string } }) {
             <p className="font-semibold mb-5">Date: <br /> {chart.date}</p>
             <p className="font-semibold mb-5">Updated: {chart.updated}</p>
 
-            <label>Select Month:</label> <br />
+            <label className='mr-2'>Select Month:</label>
             <select
               value={selectedMonth}
               onChange={(e) => setSelectedMonth(e.target.value)}
@@ -116,8 +116,8 @@ export default function Page({ params }: { params: { id: string } }) {
             </select>
 
              {/* Add a section to display a list of all available charts */}
-            <div>
-            <h2 className="text-xl text-center font-bold mb-3 underline">All Available Charts</h2>
+            <div className='bg-gray-100 pb-6 pl-2 mt-5'>
+            <h2 className="text-xl text-center font-bold my-3 underline">Available Charts</h2>
             <ul>
               {filteredLiData.map((chart: any) => (
                 <li key={chart.id}>
