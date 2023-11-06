@@ -3,12 +3,10 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-
-// Define your custom Lightbox component here (use the provided code or create your own)
-
 export default function Page({ params }: { params: { id: string } }) {
   const data = require('../../data/chartData.json');
   const [filterId, setFilterId] = useState(params.id);
+  const [chartCodeFilter, setChartCodeFilter] = useState('');
   const [filteredData, setFilteredData] = useState(data.charts);
   const [lightboxImage, setLightboxImage] = useState('');
   const [isZoomed, setIsZoomed] = useState(false);
@@ -17,39 +15,34 @@ export default function Page({ params }: { params: { id: string } }) {
   const handleFilter = () => {
     const idToFilter = parseInt(filterId, 10);
     const filtered = data.charts.filter((chart: any) => {
-      return chart.id === idToFilter;
+      return chart.id === idToFilter && chart.chartCode.includes(chartCodeFilter);
     });
     setFilteredData(filtered);
   };
 
   useEffect(() => {
     handleFilter();
-  }, [filterId, data.charts]);
+  }, [filterId, chartCodeFilter, data.charts]);
 
-  // Function to open the lightbox
   const openLightbox = (image: string) => {
     setLightboxImage(image);
   };
 
-  // Function to close the lightbox
   const closeLightbox = () => {
     setLightboxImage('');
-    setIsZoomed(false); // Reset zoom state
+    setIsZoomed(false);
   };
 
-  // Function to handle zoom in
   const handleZoomIn = () => {
     setIsZoomed(true);
   };
 
-  // Function to handle zoom out
   const handleZoomOut = () => {
     setIsZoomed(false);
   };
 
   const resetZoom = () => {
-    // Implement the logic to reset the image zoom here
-    setZoomLevel(100); // Example: You may want to set the zoom level back to 100
+    setZoomLevel(100);
   };
 
   return (
@@ -62,11 +55,10 @@ export default function Page({ params }: { params: { id: string } }) {
         onChange={(e) => setFilterId(e.target.value)}
         hidden
       />
-
       <div className="grid grid-cols-1 gap-2 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3">
         {filteredData.map((chart: any) => (
           <div
-            className="p-4 border-2 my-2 mx-auto h-[750px] shadow-lg shadow-green-500 rounded-lg"
+            className="p-4 border-2 my-2 mx-auto h-[850px] shadow-lg shadow-green-500 rounded-lg"
             key={chart.id}
           >
             <h1 className="text-red-500 bg-white text-center italic font-bold text-lg underline rounded-md">
@@ -80,20 +72,14 @@ export default function Page({ params }: { params: { id: string } }) {
             </p>
             <p className="font-semibold mb-5">Date: <br /> {chart.date}</p>
             <p className="font-semibold mb-5">Updated: {chart.updated}</p>
-
-            {/* Add a section to display a list of all available charts */}
-            <div>
-              <h2 className="text-xl text-center font-bold mb-3 underline">All Available Charts</h2>
-              <ul>
-                {data.charts.map((chart: any) => (
-                  <li key={chart.id}>
-                    <Link href={`/ChartDetails/${chart.id}`}>
-                      <p> * {chart.chartCode}</p>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <label>Search for Correlating Chart</label>
+            <input
+              type="text"
+              placeholder="Enter Chart Code"
+              className="border border-gray-300 rounded-md p-2 mr-2"
+              value={chartCodeFilter}
+              onChange={(e) => setChartCodeFilter(e.target.value)}
+            />
           </div>
         ))}
 
@@ -107,138 +93,144 @@ export default function Page({ params }: { params: { id: string } }) {
                 <h1 className="text-red-500 bg-black text-center italic font-bold text-lg underline rounded-xl p-2">
                  [{chart.id}] - {chart.pair}
                 </h1>
-                  <div>
-                    <ChartGallery
-                      chartData={chart}
-                      openLightbox={openLightbox}
-                    />
-                  </div>
+                <div>
+                  <ChartGallery
+                    chartData={chart}
+                    openLightbox={openLightbox}
+                  />
+                </div>
               </div>
             ))}
           </div>
         </div>
       </div>
 
+      <ChartList data={data} /> {/* Render the list component */}
       {lightboxImage && (
         <Lightbox
           image={lightboxImage}
           onClose={closeLightbox}
           isZoomed={isZoomed}
-          onZoomIn={handleZoomIn}
-          onZoomOut={handleZoomOut}
-          onResetZoom={resetZoom}
         />
       )}
     </div>
   );
 }
 
-    // Define a ChartGallery component to display weekly, daily, and other charts
-    function ChartGallery({ chartData, openLightbox }: any) {
-      return (
-        <div className="grid gap-3 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
-          
-          <ChartTypeGallery
-            chartType="Weekly Charts"
-            images={chartData.weeklyImages}
-            description={chartData.weeklyDescription}
-            openLightbox={openLightbox}
-          />
-          <ChartTypeGallery
-            chartType="Daily Charts"
-            images={chartData.dailyImages}
-            description={chartData.dailyDescription}
-            openLightbox={openLightbox}
-          />
-          <ChartTypeGallery
-            chartType="4 Hours Charts"
-            images={chartData.hours4Images}
-            description={chartData.hours4Description}
-            openLightbox={openLightbox}
-          />
-          <ChartTypeGallery
-            chartType="1 Hour Charts"
-            images={chartData.hour1Images}
-            description={chartData.hour1Description}
-            openLightbox={openLightbox}
-          />
-          <ChartTypeGallery
-            chartType="30 Minutes Charts"
-            images={chartData.minutes30Images}
-            description={chartData.minutes30Description}
-            openLightbox={openLightbox}
-          />
-          <ChartTypeGallery
-            chartType="15 Minutes Charts"
-            images={chartData.minutes15Images}
-            description={chartData.minutes15Description}
-            openLightbox={openLightbox}
-          />
-        </div>
-      );
-    }
+// Separate component for the list of available charts
+function ChartList({ data }: { data: any }) {
+  return (
+    <div>
+      <h2 className="text-xl text-center font-bold mb-3 underline">All Available Charts</h2>
+      <ul>
+        {data.charts.map((chart: any) => (
+          <li key={chart.id}>
+            <Link href={`/ChartDetails/${chart.id}`}>
+              <p> * {chart.chartCode}</p>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
-    // Define a component to display a specific chart type with images and descriptions
-    function ChartTypeGallery({ chartType, images, description, openLightbox }: any) {
-      return (
-        <div className="shadow-md shadow-red-500 p-2 m-5 rounded">
-          <p className="bg-blue-800 p-2 my-2 rounded-lg text-center">{chartType}</p>
-          <div className="grid grid-cols-3 gap-3 p-2 h-[170px] max-h-[170px] overflow-y-auto bg-black rounded-lg">
-            {images.map((image: string, imageIndex: number) => (
-              <div key={imageIndex} className="relative">
-                <Image
-                  src={`/trades/${image}`}
-                  alt={`Image ${imageIndex + 1}`}
-                  className="rounded-lg fill cover cursor-pointer"
-                  width={500}
-                  height={300}
-                  onClick={() => openLightbox(image)}
-                />
-              </div>
-            ))}
-          </div>
-          <div className="bg-gray-900 p-2 my-2 rounded-lg text-center">
-            <p className="m-2 font-extrabold underline">Chart Description:</p>
-            <p className="bg-white text-black">{description}</p>
-          </div>
-        </div>
-      );
-    }
+function ChartGallery({ chartData, openLightbox }: any) {
+  return (
+    <div className="grid gap-3 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
+      <ChartTypeGallery
+        chartType="Weekly Charts"
+        images={chartData.weeklyImages}
+        description={chartData.weeklyDescription}
+        openLightbox={openLightbox}
+      />
+      <ChartTypeGallery
+        chartType="Daily Charts"
+        images={chartData.dailyImages}
+        description={chartData.dailyDescription}
+        openLightbox={openLightbox}
+      />
+      <ChartTypeGallery
+        chartType="4 Hours Charts"
+        images={chartData.hours4Images}
+        description={chartData.hours4Description}
+        openLightbox={openLightbox}
+      />
+      <ChartTypeGallery
+        chartType="1 Hour Charts"
+        images={chartData.hour1Images}
+        description={chartData.hour1Description}
+        openLightbox={openLightbox}
+      />
+      <ChartTypeGallery
+        chartType="30 Minutes Charts"
+        images={chartData.minutes30Images}
+        description={chartData.minutes30Description}
+        openLightbox={openLightbox}
+      />
+      <ChartTypeGallery
+        chartType="15 Minutes Charts"
+        images={chartData.minutes15Images}
+        description={chartData.minutes15Description}
+        openLightbox={openLightbox}
+      />
+    </div>
+  );
+}
 
-      function Lightbox({
-        image,
-        onClose,
-        isZoomed,
-        onZoomIn,
-        onZoomOut,
-        onResetZoom,
-      }: {
-        image: string;
-        onClose: () => void;
-        isZoomed: boolean;
-        onZoomIn: () => void;
-        onZoomOut: () => void;
-        onResetZoom: () => void;
-      }) {
-      return (
-        <div className="lightbox flex flex-col items-center">
-          <button
-            className="lightbox-button text-2xl absolute right-3 top-3"
-            onClick={onClose}
-          >
-            &times;
-          </button>
-          <div
-            className={`lightbox-image-container ${isZoomed ? 'zoomed' : ''}`}
-          >
+function ChartTypeGallery({ chartType, images, description, openLightbox }: any) {
+  return (
+    <div className="shadow-md shadow-red-500 p-2 m-5 rounded">
+      <p className="bg-blue-800 p-2 my-2 rounded-lg text-center">{chartType}</p>
+      <div className="grid grid-cols-3 gap-3 p-2 h-[170px] max-h-[170px] overflow-y-auto bg-black rounded-lg">
+        {images.map((image: string, imageIndex: number) => (
+          <div key={imageIndex} className="relative">
             <Image
               src={`/trades/${image}`}
-              alt="Lightbox Image"
-              width={isZoomed ? 1200 : 500}
-              height={isZoomed ? 600 : 300}
-              onClick={() => (isZoomed ? onZoomOut() : onZoomIn())}
+              alt={`Image ${imageIndex + 1}`}
+              className="rounded-lg fill cover cursor-pointer"
+              width={500}
+              height={300}
+              onClick={() => openLightbox(image)}
             />
           </div>
-        </div>
-      );
-    }
+        ))}
+      </div>
+      <div className="bg-gray-900 p-2 my-2 rounded-lg text-center">
+        <p className="m-2 font-extrabold underline">Chart Description:</p>
+        <p className="bg-white text-black">{description}</p>
+      </div>
+    </div>
+  );
+}
+
+function Lightbox({
+  image,
+  onClose,
+  isZoomed,
+}: {
+  image: string;
+  onClose: () => void;
+  isZoomed: boolean;
+}) {
+  return (
+    <div className="lightbox flex flex-col items-center">
+      <button
+        className="lightbox-button text-2xl absolute right-3 top-3"
+        onClick={onClose}
+      >
+        &times;
+      </button>
+      <div
+        className={`lightbox-image-container ${isZoomed ? 'zoomed' : ''}`}
+      >
+        <Image
+          src={`/trades/${image}`}
+          alt="Lightbox Image"
+          width={isZoomed ? 1200 : 500}
+          height={isZoomed ? 600 : 300}
+        />
+      </div>
+    </div>
+  );
+}
