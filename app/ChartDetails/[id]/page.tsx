@@ -7,7 +7,7 @@ export default function Page({ params }: { params: { id: string } }) {
   const data = require('../../data/chartData.json');
   const [filterId, setFilterId] = useState(params.id);
   const [chartCodeFilter, setChartCodeFilter] = useState('');
-  const [filteredData, setFilteredData] = useState(data.charts);
+  const [searchResults, setSearchResults] = useState([]); // New state for search results
   const [lightboxImage, setLightboxImage] = useState('');
   const [isZoomed, setIsZoomed] = useState(false);
   const [zoomLevel, setZoomLevel] = useState(100);
@@ -17,7 +17,7 @@ export default function Page({ params }: { params: { id: string } }) {
     const filtered = data.charts.filter((chart: any) => {
       return chart.id === idToFilter && chart.chartCode.includes(chartCodeFilter);
     });
-    setFilteredData(filtered);
+    setSearchResults(filtered); // Update search results
   };
 
   useEffect(() => {
@@ -56,7 +56,7 @@ export default function Page({ params }: { params: { id: string } }) {
         hidden
       />
       <div className="grid grid-cols-1 gap-2 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3">
-        {filteredData.map((chart: any) => (
+        {searchResults.map((chart: any) => ( // Display search results
           <div
             className="p-4 border-2 my-2 mx-auto h-[850px] shadow-lg shadow-green-500 rounded-lg"
             key={chart.id}
@@ -76,16 +76,20 @@ export default function Page({ params }: { params: { id: string } }) {
             <input
               type="text"
               placeholder="Enter Chart Code"
-              className="border border-gray-300 rounded-md p-2 mr-2"
+              className="border border-gray-300 rounded-md p-2 my-3"
               value={chartCodeFilter}
               onChange={(e) => setChartCodeFilter(e.target.value)}
             />
+
+            <div className='h-[250px] overflow-y-auto'>
+            <ChartList data={data}/> {/* Render the list component */}
+            </div>
           </div>
         ))}
 
         <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 rounded-lg col-span-2 p-2">
           <div>
-            {filteredData.map((chart: any) => (
+            {searchResults.map((chart: any) => (
               <div
                 key={chart.id}
                 className="text-white p-2 rounded-md font-bold"
@@ -105,7 +109,7 @@ export default function Page({ params }: { params: { id: string } }) {
         </div>
       </div>
 
-      <ChartList data={data} /> {/* Render the list component */}
+      
       {lightboxImage && (
         <Lightbox
           image={lightboxImage}
@@ -121,7 +125,9 @@ export default function Page({ params }: { params: { id: string } }) {
 function ChartList({ data }: { data: any }) {
   return (
     <div>
-      <h2 className="text-xl text-center font-bold mb-3 underline">All Available Charts</h2>
+      <h2 
+        className="bg-blue-800 text-xl text-center text-white font-bold mb-3 underline">All Available Charts
+      </h2>
       <ul>
         {data.charts.map((chart: any) => (
           <li key={chart.id}>
