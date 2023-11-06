@@ -7,7 +7,7 @@ import ForexCalculator from '../Components/ForexCalculator';
 
 function Calculators() {
   return (
-    <div className="grid justify-center gap-6 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 mt-24">
+    <div className="grid justify-center gap-6 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 mt-32">
       <div className='mt-5 mb-5 mx-5'>
       <BasicCalculator />
       </div>

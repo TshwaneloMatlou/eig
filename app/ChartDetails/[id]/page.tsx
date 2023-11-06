@@ -75,7 +75,7 @@ export default function Page({ params }: { params: { id: string } }) {
   };
 
   return (
-    <div className="mx-3 p-3 mt-24">
+    <div className="mx-3 p-3 mt-32">
       <input
         type="text"
         placeholder="Enter ID"
