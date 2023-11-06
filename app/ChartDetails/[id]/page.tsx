@@ -108,6 +108,7 @@ export default function Page({ params }: { params: { id: string } }) {
             <select
               value={selectedMonth}
               onChange={(e) => setSelectedMonth(e.target.value)}
+              className='px-3 mx-2 rounded-xl'
             >
               <option value={currentMonth}>Current Month</option>
               <option value="">All Months</option>
