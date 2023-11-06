@@ -3,8 +3,8 @@ import Image from 'next/image';
 
 const KnowledgeBase = () => {
   return (
-    <div className="container mx-auto px-8 mt-32">
-      <h1 className="text-3xl font-bold mb-4">Forex Market Information</h1>
+    <div className="container mx-auto px-8 mt-36">
+      <h1 className="text-center font-semibold bg-green-300 mb-5 rounded-3xl border-2 border-red-500">Forex Market Information</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <div className="bg-white p-4 shadow rounded-lg">

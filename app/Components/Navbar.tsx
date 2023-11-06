@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <nav className="bg-blue-500 p-4 fixed top-0 left-0 right-0 z-10">
       <div className="mx-auto grid gap-3 justify-center text-center">
-        <div className="bg-green-500 text-white font-bold text-xl mb-5 sm:mb-0 sm:w-auto rounded-xl ">
+        <div className="bg-green-500 hover:bg-blue-500 text-white border-2 border-red-500 font-bold text-xl mb-5 sm:mb-0 sm:w-auto rounded-xl ">
           <Link href="/">E . I . G</Link>
         </div>
 
