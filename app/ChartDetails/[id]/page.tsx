@@ -103,7 +103,8 @@ export default function Page({ params }: { params: { id: string } }) {
             <p className="font-semibold mb-5">Date: <br /> {chart.date}</p>
             <p className="font-semibold mb-5">Updated: {chart.updated}</p>
 
-            <label>Select Month:</label>
+            <div className='bg-blue-300 px-2 py-2 rounded-xl'>
+            <label className='font-semibold'>Select Month: </label>
             <select
               value={selectedMonth}
               onChange={(e) => setSelectedMonth(e.target.value)}
@@ -116,10 +117,11 @@ export default function Page({ params }: { params: { id: string } }) {
                 </option>
               ))}
             </select>
+            </div>
 
 
              {/* Add a section to display a list of all available charts */}
-            <div className='bg-gray-100 pb-6 pl-2 mt-5'>
+            <div className='bg-gray-200 pb-6 pl-2 mt-5 rounded-xl'>
             <h2 className="text-xl text-center font-bold my-3 underline">Available Charts</h2>
             <ul>
               {filteredLiData.map((chart: any) => (
