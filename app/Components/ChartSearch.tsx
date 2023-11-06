@@ -25,7 +25,7 @@ const ChartSearch: React.FC = () => {
 
  
   return (
-    <div className="p-4 md:p-6 lg:p-8 m-5">
+    <div className="px-4 md:px-6 lg:px-8 mx-5 mt-24">
       <h2 className="text-center font-semibold bg-green-300 mb-5 rounded-3xl">Trades</h2>
       <div className="flex justify-center mb-5 p-5">
         <input

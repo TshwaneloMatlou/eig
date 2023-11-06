@@ -75,7 +75,7 @@ export default function Page({ params }: { params: { id: string } }) {
   };
 
   return (
-    <div className="m-3 p-3">
+    <div className="mx-3 p-3 mt-24">
       <input
         type="text"
         placeholder="Enter ID"
@@ -88,7 +88,7 @@ export default function Page({ params }: { params: { id: string } }) {
       <div className="grid grid-cols-1 gap-2 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3">
         {filteredData.map((chart: any) => (
           <div
-            className="p-4 border-2 my-2 mx-auto h-[850px] shadow-lg shadow-green-500 rounded-lg"
+            className="p-4 border-2 my-2 mx-auto h-[885px] shadow-lg shadow-green-500 rounded-lg"
             key={chart.id}
           >
             <h1 className="text-red-500 bg-white text-center italic font-bold text-lg underline rounded-md">
@@ -122,13 +122,13 @@ export default function Page({ params }: { params: { id: string } }) {
 
 
              {/* Add a section to display a list of all available charts */}
-            <div className='bg-gray-200 pb-6 pl-2 mt-5 rounded-xl'>
+            <div className='bg-gray-200 pb-6 pl-2 mt-5 rounded-xl h-[255px] overflow-y-auto'>
             <h2 className="text-xl text-center font-bold my-3 underline">Available Charts</h2>
             <ul>
               {filteredLiData.map((chart: any) => (
                 <li key={chart.id}>
                   <Link href={`/ChartDetails/${chart.id}`}>
-                    <p> * {chart.chartCode}</p>
+                    <p className='my-4'> * {chart.chartCode}</p>
                   </Link>
                 </li>
               ))}
