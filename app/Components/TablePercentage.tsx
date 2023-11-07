@@ -68,9 +68,6 @@ const TablePercentage = () => {
     takeProfitPrice: 0,
     takeProfitMoney: 0,
     winLose: 'WIN',
-    swap: 0,
-    commission: 0,
-    broker_PL: 0,
     our_PL: 0,
     difference_PL: 0,
     final_PL: 0,
@@ -250,7 +247,6 @@ const TablePercentage = () => {
       const previousRow = newData[newData.length - 1];
       currentBalance = previousRow.currentBalance + previousRow.final_PL;
     }
-    
   
     const newRow = {
       id: newData.length + 1,
@@ -291,7 +287,7 @@ const TablePercentage = () => {
     <div className='shadow-lg shadow-blue-400 border-2 border-blue-300 p-5'>
       <h1 className='font-bold text-[25px] bg-blue-300'>Template for (Consistent Percentage)</h1>
       
-      <button onClick={addNewRows} className="mb-4 p-2 bg-blue-500 text-white font-semibold rounded-lg">
+      <button onClick={addNewRows} className="my-4 p-2 bg-blue-500 text-white font-semibold rounded-lg">
         Add New Rows
       </button>
 
