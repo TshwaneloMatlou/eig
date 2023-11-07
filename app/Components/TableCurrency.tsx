@@ -71,35 +71,38 @@ const TableCurrency: React.FC<TableCurrencyProps> = ({ data }) => {
     if (index >= 0 && index < rowData.length) {
       const row = rowData[index];
       if (
-        row.currentBalance !== 0 && // Make sure currentBalance is not 0
-        row.riskMoney !== 0 && // Make sure riskMoney is not 0
-        row.rewardMoney !== 0 // Make sure rewardMoney is not 0
+        row.currentBalance !== 0 &&
+        row.riskMoney !== 0 &&
+        row.rewardMoney !== 0
       ) {
         const riskPercent = parseFloat(((row.riskMoney / row.currentBalance) * 100).toFixed(2));
         const rewardPercent = parseFloat(((row.rewardMoney / row.currentBalance) * 100).toFixed(2));
-
-
-        // Calculate stopLossPoints and takeProfitPoints
-        const stopLossPoints = parseFloat((row.riskMoney / 100000).toFixed(5));
-        const takeProfitPoints = parseFloat((row.rewardMoney / 100000).toFixed(5));
   
-        // Create a copy of the rowData array and update the specific row with new values
-      const updatedData = [...rowData];
-      updatedData[index] = {
-        ...updatedData[index],
-        riskPercent: riskPercent,
-        rewardPercent: rewardPercent,
-        stopLossPoints: stopLossPoints,
-        takeProfitPoints: takeProfitPoints,
-      };
-
-
-      // Update the state with the new data
-      setRowData(updatedData);
-      saveDataToLocalStorage(updatedData);
+        // Check if the selected pair is in the decimalPointsMapping
+        if (row.pair in decimalPointsMapping) {
+          const decimalPoints = decimalPointsMapping[row.pair];
+  
+          // Calculate stopLossPoints and takeProfitPoints using the specified decimal points
+          const stopLossPoints = parseFloat((row.riskMoney / (10 ** decimalPoints)).toFixed(decimalPoints));
+          const takeProfitPoints = parseFloat((row.rewardMoney / (10 ** decimalPoints)).toFixed(decimalPoints));
+  
+          // Update the state with the new data
+          const updatedData = [...rowData];
+          updatedData[index] = {
+            ...updatedData[index],
+            riskPercent: riskPercent,
+            rewardPercent: rewardPercent,
+            stopLossPoints: stopLossPoints,
+            takeProfitPoints: takeProfitPoints,
+          };
+  
+          setRowData(updatedData);
+          saveDataToLocalStorage(updatedData);
+        }
+      }
     }
-  }
-};
+  };
+  
 
   
   const addRow = () => {
@@ -191,6 +194,19 @@ const TableCurrency: React.FC<TableCurrencyProps> = ({ data }) => {
 
   // Define an array of available options
   const pairOptions = ["DXY", "USDCAD", "USDCHF", "USDJPY", "EURUSD", "GBPUSD", "AUDUSD", "NZDUSD", "XAUUSD",];
+
+  const decimalPointsMapping: Record<string, number> = {
+    "DXY": 3,  // Example decimal points for DXY
+    "USDCAD": 5,  // Example decimal points for USDCAD
+    "USDCHF": 5,  // Example decimal points for USDCHF
+    "USDJPY": 3,  // Example decimal points for USDJPY
+    "EURUSD": 5,  // Example decimal points for EURUSD
+    "GBPUSD": 5,  // Example decimal points for GBPUSD
+    "AUDUSD": 5,  // Example decimal points for AUDUSD
+    "NZDUSD": 5,  // Example decimal points for NZDUSD
+    "XAUUSD": 2,  // Example decimal points for XAUUSD
+    // Add other pairs and their respective decimal points here
+  }
 
 
   return (
