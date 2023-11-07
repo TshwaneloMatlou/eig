@@ -98,7 +98,7 @@ const TableCurrency: React.FC<TableCurrencyProps> = ({ data }) => {
     // Create a new row with default values
     const newRow: TableRow = {
       id: newId,
-      currentBalance: 0, // Default value for currentBalance in the first row
+      currentBalance: 1000, // Default value for currentBalance in the first row
       riskPercent: 0,
       riskMoney: 0, // Default value for riskMoney
       rewardPercent: 0,
@@ -174,9 +174,13 @@ const TableCurrency: React.FC<TableCurrencyProps> = ({ data }) => {
     'Our_PL',
     'Difference_PL',
     'Final_PL',
-    'button',
-    'Delete', // Add a new heading for the delete buttons
+    'Calculate Row',
+    'Delete Row', // Add a new heading for the delete buttons
   ];
+
+  // Define an array of available options
+  const pairOptions = ["DXY", "USDCAD", "USDCHF", "USDJPY", "EURUSD", "GBPUSD", "AUDUSD", "NZDUSD", "XAUUSD",];
+
 
   return (
     <div className='shadow-lg shadow-blue-400 border-2 border-blue-300 p-5'>
@@ -239,7 +243,7 @@ const TableCurrency: React.FC<TableCurrencyProps> = ({ data }) => {
                 <p className='w-full rounded-xl text-center font-bold'>{row.id}</p>
               </td>
               <td className="py-2 px-3 border-l border-r border-black">
-                <p className='w-full rounded-xl text-center text-red-500 font-bold'>${row.currentBalance} </p>
+                <p className='w-full rounded-xl text-center text-green-600 font-bold'>${row.currentBalance} </p>
               </td>
               <td className="py-2 px-3 border-l border-r border-black">
                 <p className='w-full rounded-xl text-center text-red-500 font-bold' >{row.riskPercent} % </p>
@@ -269,18 +273,38 @@ const TableCurrency: React.FC<TableCurrencyProps> = ({ data }) => {
                   onChange={(e) => handleInputChange(index, 'tradeDate', e.target.value)} />
               </td>
               <td className="py-2 px-3 border-l border-r border-black">
-                <input 
-                  type="text" 
-                  className='w-full rounded-xl text-center font-bold' 
-                  value={row.pair}  
-                  onChange={(e) => handleInputChange(index, 'pair', e.target.value)} />
+                <select
+                  className='w-full rounded-xl text-center font-bold'
+                  value={row.pair}
+                  onChange={(e) => handleInputChange(index, 'pair', e.target.value)}>
+                  {pairOptions.map((pairOption, optionIndex) => (
+                    <option key={optionIndex} value={pairOption}>
+                      {pairOption}
+                    </option>
+                  ))}
+                </select>
               </td>
               <td className="py-2 px-3 border-l border-r border-black">
-                <input 
-                  type="text" 
-                  className='w-full rounded-xl text-center font-bold' 
-                  value={row.direction}  
-                  onChange={(e) => handleInputChange(index, 'direction', e.target.value)} />
+                <div className="flex gap-2 items-center justify-center font-bold">
+                  <input
+                    type="radio"
+                    id={`buy-${index}`}
+                    name={`direction-${index}`}
+                    value="Buy"
+                    checked={row.direction === "Buy"}
+                    onChange={(e) => handleInputChange(index, 'direction', e.target.value)}
+                  />
+                  <label htmlFor={`buy-${index}`}>Buy</label>
+                  <input
+                    type="radio"
+                    id={`sell-${index}`}
+                    name={`direction-${index}`}
+                    value="Sell"
+                    checked={row.direction === "Sell"}
+                    onChange={(e) => handleInputChange(index, 'direction', e.target.value)}
+                  />
+                  <label htmlFor={`sell-${index}`}>Sell</label>
+                </div>
               </td>
               <td className="py-2 px-3 border-l border-r border-black">
                 <input 
@@ -297,53 +321,44 @@ const TableCurrency: React.FC<TableCurrencyProps> = ({ data }) => {
                   onChange={(e) => handleInputChange(index, 'openPrice', e.target.value)} />
               </td>
               <td className="py-2 px-3 border-l border-r border-black">
-                <input 
-                  type="number" 
-                  className='w-full rounded-xl text-center font-bold' 
-                  value={row.stopLossPoints}  
-                  onChange={(e) => handleInputChange(index, 'stopLossPoints', e.target.value)} />
+                <p className='w-full rounded-xl text-center text-purple-500 font-bold'> {row.stopLossPoints} </p>
               </td>
               <td className="py-2 px-3 border-l border-r border-black">
-                <input 
-                  type="number" 
-                  className='w-full rounded-xl text-center font-bold' 
-                  value={row.stopLossPrice}  
-                  onChange={(e) => handleInputChange(index, 'stopLossPrice', e.target.value)} />
+                <p className='w-full rounded-xl text-center text-blue-500 font-bold'> {row.stopLossPrice} </p>
               </td>
               <td className="py-2 px-3 border-l border-r border-black">
-                <input 
-                  type="number" 
-                  className='w-full rounded-xl text-center font-bold' 
-                  value={row.stopLossMoney}  
-                  onChange={(e) => handleInputChange(index, 'stopLossMoney', e.target.value)} />
+                <p className='w-full rounded-xl text-center text-green-500 font-bold'>$ {row.stopLossMoney} </p>
               </td>
               <td className="py-2 px-3 border-l border-r border-black">
-                <input 
-                  type="number" 
-                  className='w-full rounded-xl text-center font-bold' 
-                  value={row.takeProfitPoints}  
-                  onChange={(e) => handleInputChange(index, 'takeProfitPoints', e.target.value)} />
+                <p className='w-full rounded-xl text-center text-purple-500 font-bold'> {row.takeProfitPoints} </p>
               </td>
               <td className="py-2 px-3 border-l border-r border-black">
-                <input 
-                  type="number" 
-                  className='w-full rounded-xl text-center font-bold' 
-                  value={row.takeProfitPrice}  
-                  onChange={(e) => handleInputChange(index, 'takeProfitPrice', e.target.value)} />
+                <p className='w-full rounded-xl text-center text-blue-500 font-bold'> {row.takeProfitPrice} </p>
               </td>
               <td className="py-2 px-3 border-l border-r border-black">
-                <input 
-                  type="number" 
-                  className='w-full rounded-xl text-center font-bold' 
-                  value={row.takeProfitMoney}  
-                  onChange={(e) => handleInputChange(index, 'takeProfitMoney', e.target.value)} />
+                <p className='w-full rounded-xl text-center text-green-500 font-bold'>$ {row.takeProfitMoney} </p>
               </td>
               <td className="py-2 px-3 border-l border-r border-black">
-                <input 
-                  type="text" 
-                  className='w-full rounded-xl text-center font-bold' 
-                  value={row.winLose}  
-                  onChange={(e) => handleInputChange(index, 'winLose', e.target.value)} />
+                <div className="flex gap-2 items-center justify-center font-bold">
+                  <input
+                    type="radio"
+                    id={`win-${index}`}
+                    name={`winLose-${index}`}
+                    value="Win"
+                    checked={row.winLose === "Win"}
+                    onChange={(e) => handleInputChange(index, 'winLose', 'Win')}
+                  />
+                  <label htmlFor={`win-${index}`}>Win</label>
+                  <input
+                    type="radio"
+                    id={`lose-${index}`}
+                    name={`winLose-${index}`}
+                    value="Lose"
+                    checked={row.winLose === "Lose"}
+                    onChange={(e) => handleInputChange(index, 'winLose', 'Lose')}
+                  />
+                  <label htmlFor={`lose-${index}`}>Lose</label>
+                </div>
               </td>
               <td className="py-2 border-l border-r border-black">
                 <input 
@@ -367,13 +382,13 @@ const TableCurrency: React.FC<TableCurrencyProps> = ({ data }) => {
                   onChange={(e) => handleInputChange(index, 'broker_PL', e.target.value)} />
               </td>
               <td className="py-2 px-3 border-l border-r border-black">
-                <p className='w-full rounded-xl text-center text-red-500 font-bold'>{row.our_PL} </p>
+                <p className='w-full rounded-xl text-center text-purple-500 font-bold'>{row.our_PL} </p>
               </td>
               <td className="py-2 px-3 border-l border-r border-black">
-                <p className='w-full rounded-xl text-center text-red-500 font-bold'>{row.difference_PL} </p>
+                <p className='w-full rounded-xl text-center text-purple-500 font-bold'>{row.difference_PL} </p>
               </td>
               <td className="py-2 px-3 border-l border-r border-black">
-                <p className='w-full rounded-xl text-center text-red-500 font-bold'> {row.final_PL} </p>
+                <p className='w-full rounded-xl text-center text-red-500 font-extrabold underline'> {row.final_PL} </p>
               </td>
               <td className="py-2 px-3 border-l border-r border-black">
                 <button
