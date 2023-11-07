@@ -75,21 +75,32 @@ const TableCurrency: React.FC<TableCurrencyProps> = ({ data }) => {
         row.riskMoney !== 0 && // Make sure riskMoney is not 0
         row.rewardMoney !== 0 // Make sure rewardMoney is not 0
       ) {
-        const riskPercent = ((row.riskMoney / row.currentBalance) * 100);
-        const rewardPercent = ((row.rewardMoney / row.currentBalance) * 100);
+        const riskPercent = parseFloat(((row.riskMoney / row.currentBalance) * 100).toFixed(2));
+        const rewardPercent = parseFloat(((row.rewardMoney / row.currentBalance) * 100).toFixed(2));
+
+
+        // Calculate stopLossPoints and takeProfitPoints
+        const stopLossPoints = parseFloat((row.riskMoney / 100000).toFixed(5));
+        const takeProfitPoints = parseFloat((row.rewardMoney / 100000).toFixed(5));
   
-        const updatedData = [...rowData];
-        updatedData[index] = {
-          ...updatedData[index],
-          riskPercent: parseFloat(riskPercent.toFixed(2)),
-          rewardPercent: parseFloat(rewardPercent.toFixed(2)),
-        };
-  
-        setRowData(updatedData);
-        saveDataToLocalStorage(updatedData);
-      }
+        // Create a copy of the rowData array and update the specific row with new values
+      const updatedData = [...rowData];
+      updatedData[index] = {
+        ...updatedData[index],
+        riskPercent: riskPercent,
+        rewardPercent: rewardPercent,
+        stopLossPoints: stopLossPoints,
+        takeProfitPoints: takeProfitPoints,
+      };
+
+
+      // Update the state with the new data
+      setRowData(updatedData);
+      saveDataToLocalStorage(updatedData);
     }
-  };
+  }
+};
+
   
   const addRow = () => {
     // Generate a new id by finding the maximum id in the existing data and incrementing it by 1
