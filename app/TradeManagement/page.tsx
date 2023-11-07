@@ -1,5 +1,4 @@
 'use client'
-import React from 'react';
 import TableCurrency from '../Components/TableCurrency';
 
 const MoneyManagement = () => {
@@ -11,7 +10,7 @@ const MoneyManagement = () => {
       riskMoney: 6,
       rewardPercent: 0,
       rewardMoney: 12,
-      tradeDate: '2023-10-26T10:00',
+      tradeDate: '2023-10-26',
       pair: 'EURUSD',
       direction: 'BUY',
       lotSize: 0.01,
