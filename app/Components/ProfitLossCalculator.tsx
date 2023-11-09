@@ -1,12 +1,12 @@
 'use client'
-import React, { useState, useEffect  } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const ProfitLossCalculator = () => {
   const [lotSize, setLotSize] = useState('0.01');
   const [stopLossPoints, setStopLossPoints] = useState('0.00101');
-  const [stopLossMoney, setStopLossMoney] = useState('');
+  const [stopLossMoney, setStopLossMoney] = useState('0');
   const [takeProfitPoints, setTakeProfitPoints] = useState('0.00101');
-  const [takeProfitMoney, setTakeProfitMoney] = useState('');
+  const [takeProfitMoney, setTakeProfitMoney] = useState('0');
   const [riskRewardRatio, setRiskRewardRatio] = useState('');
   const [selectedCurrency, setSelectedCurrency] = useState('EURUSD'); // Add state for selected currency
 
