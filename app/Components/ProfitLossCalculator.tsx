@@ -79,13 +79,13 @@ const ProfitLossCalculator = () => {
           <p className='mb-2'>* Example Calculate Profit:  LotSize * Stop Profit Points = Stop Profit Money ($)</p>
           <h1 className='bg-blue-500 text-center font-bold my-3 rounded-lg'>Amount of Decimal Numbers (5) </h1>
           <p className='text-center mb-3 underline'>USDCAD, USDCHF, EURUSD, GBPUSD, AUDUSD, NZDUSD</p>
-          <p className='mb-2'>* Example1: EURUSD = "1.001001"</p>
-          <p className='mb-2'>* Example2: GBPUSD = "1.001002"</p>
+          <p className='mb-2'>* Example1: EURUSD = 1.001001</p>
+          <p className='mb-2'>* Example2: GBPUSD = 1.001002</p>
           
           <h1 className='bg-blue-500 text-center font-bold my-3 rounded-lg'>Amount of Decimal Numbers (3) </h1>
           <p className='text-center mb-3 underline'>DXY, USDJPY</p>
-          <p className='mb-2'>* Example1: DXY = "1.001"</p>
-          <p className='mb-2'>* Example2: USDJPY = "1.002"</p>
+          <p className='mb-2'>* Example1: DXY = 1.001</p>
+          <p className='mb-2'>* Example2: USDJPY = 1.002</p>
         </div>
         <div className='mx-auto text-center pt-8 px-2'>E.I.G</div>
         <div className="flex flex-col">
