@@ -55,7 +55,7 @@ const UsdCorrelationBlock: React.FC<UsdCorrelationBlockProps> = ({ chart, select
   return (
     <div
       onClick={onClick}
-      className={`border border-gray-300 shadow-md rounded-md overflow-hidden mx-2 my-2 ${
+      className={`border border-gray-300 shadow-md rounded-md overflow-hidden mx-2 my-2 p-8 ${
         selected ? 'bg-gray-200' : 'hover:bg-gray-200'
       }`}
       style={{ minWidth: '300px', position: 'relative', overflow: 'hidden' }}
