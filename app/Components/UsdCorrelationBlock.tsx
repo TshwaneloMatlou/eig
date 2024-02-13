@@ -83,27 +83,27 @@ const UsdCorrelationBlock: React.FC<UsdCorrelationBlockProps> = ({ chart, select
         </div>
       </div>
       <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
-        <button className="bg-red-300 text-black rounded-2xl " onClick={reset}>
+        <button className="bg-red-300 p-1 text-black rounded-2xl " onClick={reset}>
           <FontAwesomeIcon icon={faSync} />
         </button>
       </div>
       <div style={{ position: 'absolute', bottom: '50%', left: '10px' }}>
-        <button className="bg-gray-100 text-black rounded-2xl " onClick={() => handlePan('left')}>
+        <button className="bg-blue-300 p-1 text-black rounded-2xl " onClick={() => handlePan('left')}>
           <FontAwesomeIcon icon={faArrowLeft} />
         </button>
       </div>
       <div style={{ position: 'absolute', bottom: '10px', left: '25%', transform: 'translateX(-50%)' }}>
-        <button className="bg-gray-100 text-black rounded-2xl " onClick={zoomOut}>
+        <button className="bg-green-300 p-1 text-black rounded-2xl " onClick={zoomOut}>
           <FontAwesomeIcon icon={faSearchMinus} />
         </button>
       </div>
       <div style={{ position: 'absolute', bottom: '10px', left: '75%', transform: 'translateX(-50%)' }}>
-        <button className="bg-gray-100 text-black rounded-2xl " onClick={zoomIn}>
+        <button className="bg-green-300 p-1 text-black rounded-2xl " onClick={zoomIn}>
           <FontAwesomeIcon icon={faSearchPlus} />
         </button>
       </div>
       <div style={{ position: 'absolute', bottom: '50%', right: '10px' }}>
-        <button className="bg-gray-100 text-black rounded-2xl " onClick={() => handlePan('right')}>
+        <button className="bg-blue-300 p-1 text-black rounded-2xl " onClick={() => handlePan('right')}>
           <FontAwesomeIcon icon={faArrowRight} />
         </button>
       </div>
