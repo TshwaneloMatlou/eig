@@ -6,7 +6,7 @@ import Link from 'next/link';
 // Define your custom Lightbox component here (use the provided code or create your own)
 
 export default function Page({ params }: { params: { id: string } }) {
-  const data = require('../../data/chartData.json');
+  const data = require('../../data/chartData2.json');
   const [filterId, setFilterId] = useState(params.id);
   const [filteredData, setFilteredData] = useState(data.charts);
   const [filteredLiData, setFilteredLiData] = useState(data.charts);

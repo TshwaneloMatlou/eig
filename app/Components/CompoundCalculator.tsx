@@ -13,7 +13,7 @@ const CompoundCalculator = () => {
   const [futureValue, setFutureValue] = useState('');
   const [calculationTable, setCalculationTable] = useState<CalculationTableRow[]>([]);
   
-
+  
   // Define a type for the calculation table
   type CalculationTableRow = {
     period: number;

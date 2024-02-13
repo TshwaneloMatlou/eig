@@ -75,8 +75,8 @@ const ProfitLossCalculator = () => {
         <div className='bg-black col-span-2 text-white p-5 rounded-2xl'>
           <h1 className='text-center text-green-500 text-[15pt] font-extrabold mb-3'>Description</h1>
           <p className='mb-3'>This calculator is designed to calculate the Profit and Loss of a trade based on editing the (Currency Pair, Points or LotSize).</p>
-          <p className='mb-2'>* Example Calculate Loss:  LotSize * Stop Loss Points = Stop Loss Money ($)</p>
-          <p className='mb-2'>* Example Calculate Profit:  LotSize * Stop Profit Points = Stop Profit Money ($)</p>
+          <p className='mb-2'>* Example Calculate Loss:  LotSize * Stop Loss Points = Stop Loss ($)</p>
+          <p className='mb-2'>* Example Calculate Profit:  LotSize * Stop Profit Points = Stop Profit ($)</p>
           <h1 className='bg-blue-500 text-center font-bold my-3 rounded-lg'>Amount of Decimal Numbers (5) </h1>
           <p className='text-center mb-3 underline'>USDCAD, USDCHF, EURUSD, GBPUSD, AUDUSD, NZDUSD</p>
           <p className='mb-2'>* Example1: EURUSD = 1.001001</p>
@@ -159,7 +159,7 @@ const ProfitLossCalculator = () => {
         </div>
         <div className="flex flex-col">
           <label className="mb-2" htmlFor="stopLossMoney">
-            Stop Loss Money ($):
+            Stop Loss ($):
           </label>
           <input
             className="px-2 py-1 border-2 border-red-500 rounded"
@@ -171,7 +171,7 @@ const ProfitLossCalculator = () => {
         </div>
         <div className="flex flex-col">
           <label className="mb-2" htmlFor="takeProfitMoney">
-            Take Profit Money ($):
+            Take Profit ($):
           </label>
           <input
             className="px-2 py-1 border-2 border-red-500 rounded"
