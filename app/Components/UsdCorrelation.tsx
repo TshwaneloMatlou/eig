@@ -48,7 +48,7 @@ const UsdCorrelation = () => {
   };
 
   return (
-    <div className="px-4 md:px-6 lg:px-8 mx-5">
+    <div>
       <div className="flex justify-center mb-5 p-5">
         <input
           type="date"
