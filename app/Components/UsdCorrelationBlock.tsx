@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faArrowRight, faSync, faSearchMinus } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faArrowRight, faSync, faSearchMinus, faSearchPlus } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
 
 interface UsdCorrelationBlockProps {
@@ -21,6 +21,13 @@ const UsdCorrelationBlock: React.FC<UsdCorrelationBlockProps> = ({ chart, select
     // Adjusted zoom out increment value
     if (zoomLevel > 1.1) {
       setZoomLevel(zoomLevel - 0.1);
+    }
+  };
+
+  const zoomIn = () => {
+    // Adjusted zoom in increment value
+    if (zoomLevel < 2) {
+      setZoomLevel(zoomLevel + 0.1);
     }
   };
 
@@ -85,9 +92,14 @@ const UsdCorrelationBlock: React.FC<UsdCorrelationBlockProps> = ({ chart, select
           <FontAwesomeIcon icon={faArrowLeft} />
         </button>
       </div>
-      <div style={{ position: 'absolute', bottom: '10px', left: '50%', transform: 'translateX(-50%)' }}>
+      <div style={{ position: 'absolute', bottom: '10px', left: '25%', transform: 'translateX(-50%)' }}>
         <button className="bg-gray-100 text-black rounded-2xl " onClick={zoomOut}>
           <FontAwesomeIcon icon={faSearchMinus} />
+        </button>
+      </div>
+      <div style={{ position: 'absolute', bottom: '10px', left: '75%', transform: 'translateX(-50%)' }}>
+        <button className="bg-gray-100 text-black rounded-2xl " onClick={zoomIn}>
+          <FontAwesomeIcon icon={faSearchPlus} />
         </button>
       </div>
       <div style={{ position: 'absolute', bottom: '50%', right: '10px' }}>
