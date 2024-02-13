@@ -22,4 +22,4 @@ const ChartSearch = () => {
   )
 }
 
-export default ChartSearch
+export default ChartSearch;

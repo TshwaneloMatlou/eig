@@ -75,12 +75,12 @@ const UsdCorrelationBlock: React.FC<UsdCorrelationBlockProps> = ({ chart, select
           </div>
         </div>
       </div>
-      <div style={{ position: 'absolute', top: '75%', left: '50%', transform: 'translate(-50%, -50%)' }}>
-        <button className="bg-red-200 text-black rounded-2xl " onClick={reset}>
+      <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
+        <button className="bg-red-300 text-black rounded-2xl " onClick={reset}>
           <FontAwesomeIcon icon={faSync} />
         </button>
       </div>
-      <div style={{ position: 'absolute', bottom: '10px', left: '10px' }}>
+      <div style={{ position: 'absolute', bottom: '50%', left: '10px' }}>
         <button className="bg-gray-100 text-black rounded-2xl " onClick={() => handlePan('left')}>
           <FontAwesomeIcon icon={faArrowLeft} />
         </button>
@@ -90,7 +90,7 @@ const UsdCorrelationBlock: React.FC<UsdCorrelationBlockProps> = ({ chart, select
           <FontAwesomeIcon icon={faSearchMinus} />
         </button>
       </div>
-      <div style={{ position: 'absolute', bottom: '10px', right: '10px' }}>
+      <div style={{ position: 'absolute', bottom: '50%', right: '10px' }}>
         <button className="bg-gray-100 text-black rounded-2xl " onClick={() => handlePan('right')}>
           <FontAwesomeIcon icon={faArrowRight} />
         </button>

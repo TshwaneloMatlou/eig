@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Link from 'next/link';
 import TradeCard from './TradeCard';
 
 const Trades = () => {
@@ -7,7 +6,7 @@ const Trades = () => {
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   const [filteredData, setFilteredData] = useState(data.charts);
-  const [selectedRow, setSelectedRow] = useState(null);
+  const [selectedRow, setSelectedRow] = useState<string | null>(null); // Explicitly set type to string or null
 
   const handleFilter = () => {
     const filtered = data.charts.filter((chart: any) => {
