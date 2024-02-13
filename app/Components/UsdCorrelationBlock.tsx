@@ -26,13 +26,13 @@ const UsdCorrelationBlock: React.FC<UsdCorrelationBlockProps> = ({ chart, select
 
   const zoomIn = () => {
     // Adjusted zoom in increment value
-    if (zoomLevel < 2) {
+    if (zoomLevel < 5) {
       setZoomLevel(zoomLevel + 0.1);
     }
   };
 
   const handlePan = (direction: 'left' | 'right') => {
-    const step = 50; // Adjust the step value as needed
+    const step = 25; // Adjust the step value as needed
     const newOffsetX = direction === 'left' ? offsetX + step : offsetX - step;
     setOffsetX(newOffsetX);
   };
