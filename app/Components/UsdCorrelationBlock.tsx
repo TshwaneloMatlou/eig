@@ -85,7 +85,7 @@ const UsdCorrelationBlock: React.FC<UsdCorrelationBlockProps> = ({ chart, select
           />
         </div>
       </div>
-      <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
+      <div style={{ position: 'absolute', bottom: '10px', left: '50%', transform: 'translateX(-50%)' }}>
         <button className="bg-red-300 p-1 text-black rounded-2xl " onClick={reset}>
           <FontAwesomeIcon icon={faSync} />
         </button>
