@@ -29,7 +29,7 @@ const Trades = () => {
   };
 
   return (
-    <div className="">
+    <div>
       <div className="flex justify-center mb-5 p-5">
         <input
           type="date"
@@ -61,11 +61,11 @@ const Trades = () => {
         </div>
       </div>
 
-      <div className="container mx-auto mb-10 overflow-auto">
+      <div className="container mx-auto overflow-auto">
         {/* Toggle between table and card views */}
         {filteredData.length > 0 ? (
           <>
-            <div className="flex overflow-x-auto mb-10 p-2">
+            <div className="flex overflow-x-auto p-2">
               {filteredData.map((chart: any) => (
                 <TradeCard
                   key={chart.id}
