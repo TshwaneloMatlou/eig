@@ -9,14 +9,14 @@ const ChartSearch = () => {
   return (
     <div>
       <div className="mt-28">
-        <section className="py-5 mb-2 rounded-xl">
+        <div className="py-5 mb-2 rounded-xl">
           <div className="container mx-auto text-center">
             <h2 className="text-3xl m-2 font-semibold font-serif underline">Our Trading Analysis</h2>
             <p className="text-lg text-green-600 font-bold shadow-xl">
               We strive to deliver top-quality analysis and highly profitable trade opportunities.
             </p>
           </div>
-        </section>
+        </div>
 
         <h2 className="text-xl text-center font-extrabold bg-green-300 rounded-3xl border-2 border-red-500 ">Trades</h2>
         <Trades />
