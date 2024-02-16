@@ -2,7 +2,7 @@ import React from 'react';
 
 const TradeReportCards: React.FC = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 my-3 p-8 border border-red-500">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 my-3 p-8 shadow-lg shadow-gray-500 ">
       <div className="rounded shadow-lg shadow-green-300">
         <div className="px-6 py-4 text-center">
           <div className="font-bold text-xl mb-2">Amount of Trades taken</div>
