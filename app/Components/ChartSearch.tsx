@@ -2,6 +2,7 @@ import React from 'react'
 import Trades from './Trades'
 import UsdCorrelation from './UsdCorrelation'
 import ChartBanner from './ChartBanner'
+import EconomicCalendarWidget from './EconomicCalendarWidget'
 /** import TradeChartsCards from './TradeChartsCards' */
 
 
@@ -18,7 +19,10 @@ const ChartSearch = () => {
           </div>
         </div>
 
-        <h2 className="text-xl text-center font-extrabold bg-green-300 rounded-3xl border-2 border-red-500 ">Trades</h2>
+        <h2 className="text-xl text-center font-extrabold rounded-3xl border-2">Economic Calender</h2>
+        <EconomicCalendarWidget />
+
+        <h2 className="text-xl text-center font-extrabold bg-green-300 rounded-3xl border-2 border-red-500 mt-4 ">Trades</h2>
         <Trades />
 
         <ChartBanner imageUrl="/Images/banner1.jpg" altText="Chart Banner" />
