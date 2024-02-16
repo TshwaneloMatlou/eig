@@ -4,7 +4,7 @@ const EconomicCalendarWidget: React.FC = () => {
   return (
     <>
       <iframe
-        src="https://widget.myfxbook.com/widget/calendar.html?lang=en&impacts=0,1,2,3&symbols="
+        src="https://widget.myfxbook.com/widget/calendar.html?lang=en&impacts=2,3&country=213&symbols="
         style={{ border: '0', width: '100%', height: '500px', backgroundColor: "black", padding: '30px' }}
       ></iframe>
       <div style={{ marginTop: '10px' }}>
@@ -25,7 +25,7 @@ const EconomicCalendarWidget: React.FC = () => {
             rel="noopener"
             style={{ color: '#666666' }}
           >
-            <b>Economic Calendar</b>
+            <b className='font-bold text-red-500'>Economic Calendar</b>
           </a>
           by Myfxbook.com
         </div>
