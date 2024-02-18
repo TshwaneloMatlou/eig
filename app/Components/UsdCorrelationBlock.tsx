@@ -90,11 +90,6 @@ const UsdCorrelationBlock: React.FC<UsdCorrelationBlockProps> = ({ chart, select
           )}
         </div>
       </div>
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
-        <button className="bg-red-300 p-1 text-black rounded-2xl " onClick={onClick}>
-          <FontAwesomeIcon icon={faSync} />
-        </button>
-      </div>
     </div>
   );
 };
