@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faArrowRight, faSync, faSearchMinus, faSearchPlus, faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { faSync } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
 
 interface UsdCorrelationBlockProps {
@@ -10,40 +10,18 @@ interface UsdCorrelationBlockProps {
 }
 
 const UsdCorrelationBlock: React.FC<UsdCorrelationBlockProps> = ({ chart, selected, onClick }) => {
+  const maxZoomLevel = 2; // Define maximum zoom level
   const [zoomLevel, setZoomLevel] = useState(1);
   const [offsetX, setOffsetX] = useState(0);
   const [offsetY, setOffsetY] = useState(0);
+  const [isPanning, setIsPanning] = useState(false);
+  const [panStartX, setPanStartX] = useState(0);
+  const [panStartY, setPanStartY] = useState(0);
 
   const handleImageClick = () => {
-    setZoomLevel(zoomLevel === 1 ? 2 : 1);
-  };
-
-  const zoomOut = () => {
-    // Adjusted zoom out increment value
-    if (zoomLevel > 1.1) {
-      setZoomLevel(zoomLevel - 0.1);
+    if (zoomLevel < maxZoomLevel) {
+      setZoomLevel(zoomLevel + 0.1); // Increment zoom level
     }
-  };
-
-  const zoomIn = () => {
-    // Adjusted zoom in increment value
-    if (zoomLevel < 5) {
-      setZoomLevel(zoomLevel + 0.1);
-    }
-  };
-
-  const handlePan = (direction: 'left' | 'right') => {
-    const step = 30; // Adjust the step value as needed
-    const newOffsetX = direction === 'left' ? offsetX + step : offsetX - step;
-    setOffsetX(newOffsetX);
-  };
-
-  const scaleUp = () => {
-    setOffsetY(offsetY + 30);
-  };
-
-  const scaleDown = () => {
-    setOffsetY(offsetY - 30);
   };
 
   const reset = () => {
@@ -52,13 +30,36 @@ const UsdCorrelationBlock: React.FC<UsdCorrelationBlockProps> = ({ chart, select
     setOffsetY(0);
   };
 
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    setIsPanning(true);
+    setPanStartX(e.clientX);
+    setPanStartY(e.clientY);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!isPanning) return;
+    const deltaX = e.clientX - panStartX;
+    const deltaY = e.clientY - panStartY;
+    setOffsetX(offsetX + deltaX);
+    setOffsetY(offsetY + deltaY);
+    setPanStartX(e.clientX);
+    setPanStartY(e.clientY);
+  };
+
+  const handleMouseUp = () => {
+    setIsPanning(false);
+  };
+
   return (
     <div
       onClick={onClick}
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
       className={`border border-gray-300 shadow-md rounded-md overflow-hidden mx-2 my-2 py-8 ${
         selected ? 'bg-gray-200' : 'hover:bg-gray-200'
       }`}
-      style={{ minWidth: '300px', position: 'relative', overflow: 'hidden' }}
+      style={{ minWidth: '300px', position: 'relative', overflow: 'hidden', cursor: 'grab' }}
     >
       <div className="p-4" style={{ position: 'relative' }}>
         <div className="bg-black font-bold text-center text-white rounded-2xl">{chart.id} - {chart.pair}</div>
@@ -88,36 +89,6 @@ const UsdCorrelationBlock: React.FC<UsdCorrelationBlockProps> = ({ chart, select
       <div style={{ position: 'absolute', bottom: '10px', left: '50%', transform: 'translateX(-50%)' }}>
         <button className="bg-red-300 p-1 text-black rounded-2xl " onClick={reset}>
           <FontAwesomeIcon icon={faSync} />
-        </button>
-      </div>
-      <div style={{ position: 'absolute', bottom: '50%', left: '10px' }}>
-        <button className="bg-blue-300 p-1 text-black rounded-2xl " onClick={() => handlePan('left')}>
-          <FontAwesomeIcon icon={faArrowLeft} />
-        </button>
-      </div>
-      <div style={{ position: 'absolute', bottom: '10px', left: '25%', transform: 'translateX(-50%)' }}>
-        <button className="bg-green-300 p-1 text-black rounded-2xl " onClick={zoomOut}>
-          <FontAwesomeIcon icon={faSearchMinus} />
-        </button>
-      </div>
-      <div style={{ position: 'absolute', bottom: '10px', left: '75%', transform: 'translateX(-50%)' }}>
-        <button className="bg-green-300 p-1 text-black rounded-2xl " onClick={zoomIn}>
-          <FontAwesomeIcon icon={faSearchPlus} />
-        </button>
-      </div>
-      <div style={{ position: 'absolute', bottom: '50%', right: '10px' }}>
-        <button className="bg-blue-300 p-1 text-black rounded-2xl " onClick={() => handlePan('right')}>
-          <FontAwesomeIcon icon={faArrowRight} />
-        </button>
-      </div>
-      <div style={{ position: 'absolute', bottom: '10px', left: '10px' }}>
-        <button className="bg-yellow-300 p-1 text-black rounded-2xl " onClick={scaleUp}>
-          <FontAwesomeIcon icon={faArrowUp} />
-        </button>
-      </div>
-      <div style={{ position: 'absolute', bottom: '10px', right: '10px' }}>
-        <button className="bg-yellow-300 p-1 text-black rounded-2xl " onClick={scaleDown}>
-          <FontAwesomeIcon icon={faArrowDown} />
         </button>
       </div>
     </div>

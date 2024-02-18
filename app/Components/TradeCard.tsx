@@ -24,7 +24,7 @@ const TradeCard: React.FC<TradeCardProps> = ({ chart, selected, onClick }) => {
         <p className='text-center'>{chart.date}</p>
         <p className='font-semibold text-center'>{chart.direction}</p>
         <Image 
-          src={`/trades/${chart.weeklyImages}`} 
+          src={`/trades/${chart.weeklyImages}`}
           alt="Weekly Chart" 
           className="mt-2 w-full h-32 object-cover shadow-lg shadow-green-300" 
           height={150} 
