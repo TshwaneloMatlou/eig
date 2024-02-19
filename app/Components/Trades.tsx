@@ -63,7 +63,8 @@ const Trades = () => {
       </div>
 
       {/* Slideshow component */}
-      <div className="grid md:min-h-[600px] min-h-[250px] pt-3 bg-gray-100 overflow-x-auto">
+      <div className="grid md:min-h-[600px] min-h-[250px] pt-3.
+       bg-gray-100 overflow-x-auto">
         <Slideshow images={filteredData.map((chart: any) => ({
           src: `/trades/${chart.weeklyImages}`,
           alt: chart.id
