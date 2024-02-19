@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import TradeCard from './TradeCard';
+import Slideshow from './Slideshow'; // Import the Slideshow component
 
 const Trades = () => {
   const data = require('../data/chartData2.json');
@@ -45,7 +46,7 @@ const Trades = () => {
         />
         <div>
           <button
-            className="bg-blue-500 hover-bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
             onClick={handleFilter}
           >
             Filter
@@ -53,12 +54,20 @@ const Trades = () => {
         </div>
         <div>
           <button
-            className="bg-gray-500 hover-bg-gray-700 text-white font-bold py-2 px-4 rounded"
+            className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
             onClick={handleReset}
           >
             Reset
           </button>
         </div>
+      </div>
+
+      {/* Slideshow component */}
+      <div className="grid md:min-h-[600px] min-h-[250px] pt-3 bg-gray-100 overflow-x-auto">
+        <Slideshow images={filteredData.map((chart: any) => ({
+          src: `/trades/${chart.weeklyImages}`,
+          alt: chart.id
+        }))} />
       </div>
 
       <div className="container mx-auto overflow-auto">
