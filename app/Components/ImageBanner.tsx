@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import TradeCard from './TradeCard';
 
 interface ChartData {
   id: string;
@@ -34,33 +33,34 @@ const ImageBanner: React.FC<ImageBannerProps> = ({ filteredData, selectedRow, ha
     setSelectedImageIndex((prevIndex) => (prevIndex === 0 ? filteredData.length - 1 : prevIndex - 1));
   };
 
+  const Lightbox = () => (
+    <div className="lightbox flex flex-col items-center">
+      <button className="lightbox-button text-2xl absolute right-3 top-3" onClick={closeLightbox}>
+        &times;
+      </button>
+      <div className={`lightbox-image-container`}>
+        <img
+          src={`/trades/${filteredData[selectedImageIndex].weeklyImages}`}
+          alt="Lightbox Image"
+          width={1917}
+          height={881}
+        />
+      </div>
+    </div>
+  );
+
   return (
-    <div className="image-banner" onClick={() => openLightbox(0)}>
+    <div className="image-banner">
+        <h2 className="text-xl text-center font-extrabold rounded-3xl border-2 mt-8">1 Hour Charts</h2>
       <img
         src={`/trades/${filteredData[selectedImageIndex].weeklyImages}`}
         alt="Banner Image"
         width={1917}
         height={881}
         style={{ width: '100%', height: '100%', objectFit: 'cover', cursor: 'pointer' }}
+        onClick={() => openLightbox(selectedImageIndex)}
       />
-      {lightboxOpen && (
-        <div className="lightbox-overlay" onClick={closeLightbox}>
-          <button className="slideshow-prev" onClick={goToPrevSlide}>
-            &lt;
-          </button>
-          <div className="lightbox">
-            <img
-              src={`/trades/${filteredData[selectedImageIndex].weeklyImages}`}
-              alt="Lightbox Image"
-              width={1917}
-              height={881}
-            />
-          </div>
-          <button className="slideshow-next" onClick={goToNextSlide}>
-            &gt;
-          </button>
-        </div>
-      )}
+      {lightboxOpen && <Lightbox />}
     </div>
   );
 };
