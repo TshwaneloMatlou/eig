@@ -3,7 +3,6 @@ import Trades from './Trades'
 import UsdCorrelation from './UsdCorrelation'
 import ChartBanner from './ChartBanner'
 import EconomicCalendarWidget from './EconomicCalendarWidget'
-import TradeReportCards from './TradeReportCards'
 /** import TradeChartsCards from './TradeChartsCards' */
 
 
@@ -19,9 +18,6 @@ const ChartSearch = () => {
             </p>
           </div>
         </div>
-
-        <h2 className="text-xl text-center font-extrabold rounded-3xl border-2 mt-8">Current Month Trades</h2>
-        <TradeReportCards />
         
         <h2 className="text-xl text-center font-extrabold rounded-3xl border-2 mt-8">Economic Calender</h2>
         <EconomicCalendarWidget />

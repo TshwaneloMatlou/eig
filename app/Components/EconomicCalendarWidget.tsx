@@ -1,11 +1,14 @@
 import React from 'react';
 
 const EconomicCalendarWidget: React.FC = () => {
+  const countryCodes = ['USD', 'GBP', 'EUR', 'CAD', 'AUD', 'NZD', 'CHF', 'JPY'];
+  const countryParam = countryCodes.map((code) => `country=${code}`).join('&');
+  
   return (
     <>
       <iframe
-        src="https://widget.myfxbook.com/widget/calendar.html?lang=en&impacts=2,3&country=213&symbols="
-        style={{ border: '0', width: '100%', height: '500px', backgroundColor: "black", padding: '30px' }}
+        src={`https://widget.myfxbook.com/widget/calendar.html?lang=en&impacts=2,3&${countryParam}&symbols=`}
+        style={{ border: '0', width: '100%', height: '500px', backgroundColor: 'black', padding: '30px' }}
       ></iframe>
       <div style={{ marginTop: '10px' }}>
         <div

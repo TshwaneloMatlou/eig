@@ -63,12 +63,13 @@ const Trades = () => {
       </div>
 
       {/* Slideshow component */}
+      <div>
         <Slideshow images={filteredData.map((chart: any) => ({
           src: `/trades/${chart.weeklyImages}`,
           alt: chart.id
         }))} />
-
-
+      </div>
+      
       <div className="container mx-auto overflow-auto">
         {/* Toggle between table and card views */}
         {filteredData.length > 0 ? (

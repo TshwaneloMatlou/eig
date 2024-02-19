@@ -36,25 +36,7 @@
     border-radius: 50%;
     font-size: 24px;
   }
+  
 
-  .slideshow-container {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch; /* Enables momentum scrolling on iOS */
-  }
-  
-  .slideshow-container > img {
-    flex: 0 0 auto;
-    scroll-snap-align: start;
-    width: 300px;
-    height: 200px;
-    margin-right: 10px; /* Adjust spacing between images */
-  }
-  
-  /* Optional: Hide scrollbar */
-  .slideshow-container::-webkit-scrollbar {
-    display: none;
-  }
   
   
