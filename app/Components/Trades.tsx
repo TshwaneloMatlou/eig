@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import TradeCard from './TradeCard';
-import Slideshow from './Slideshow'; // Import the Slideshow component
+import ImageBanner from './ImageBanner';
 
 const Trades = () => {
   const data = require('../data/chartData2.json');
@@ -62,14 +62,8 @@ const Trades = () => {
         </div>
       </div>
 
-      {/* Slideshow component */}
-      <div>
-        <Slideshow images={filteredData.map((chart: any) => ({
-          src: `/trades/${chart.weeklyImages}`,
-          alt: chart.id
-        }))} />
-      </div>
-      
+      <ImageBanner filteredData={filteredData} selectedRow={selectedRow} handleRowClick={handleRowClick} />
+              
       <div className="container mx-auto overflow-auto">
         {/* Toggle between table and card views */}
         {filteredData.length > 0 ? (

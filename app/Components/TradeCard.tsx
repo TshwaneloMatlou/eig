@@ -14,7 +14,7 @@ const TradeCard: React.FC<TradeCardProps> = ({ chart, selected, onClick }) => {
     <Link href={`/ChartDetails/${chart.id}`} className="block">
     <div
       onClick={onClick}
-      className={`border border-gray-300 shadow-md rounded-md overflow-hidden mx-2 ${
+      className={`border border-gray-300 shadow-md rounded-md overflow-hidden mx-2 my-2 ${
         selected ? 'bg-gray-200' : 'hover:bg-blue-200'
       }`}
       style={{ minWidth: '300px' }}
