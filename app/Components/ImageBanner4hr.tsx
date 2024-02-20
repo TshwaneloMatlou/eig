@@ -12,7 +12,7 @@ interface ImageBannerProps {
   handleRowClick: (id: string) => void;
 }
 
-const ImageBanner: React.FC<ImageBannerProps> = ({ filteredData, selectedRow, handleRowClick }) => {
+const ImageBanner4hr: React.FC<ImageBannerProps> = ({ filteredData, selectedRow, handleRowClick }) => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
@@ -51,7 +51,7 @@ const ImageBanner: React.FC<ImageBannerProps> = ({ filteredData, selectedRow, ha
 
   return (
     <div className="image-banner">
-        <h2 className="text-xl text-center font-extrabold rounded-3xl border-2 mt-8">Weekly Open Price - 1 Hour Charts</h2>
+        <h2 className="text-xl text-center font-extrabold rounded-3xl border-2 mt-8">Weekly Open Price - 4 Hour Charts</h2>
       <img
         src={`/trades/${filteredData[selectedImageIndex].weeklyImages}`}
         alt="Banner Image"
@@ -65,4 +65,4 @@ const ImageBanner: React.FC<ImageBannerProps> = ({ filteredData, selectedRow, ha
   );
 };
 
-export default ImageBanner;
+export default ImageBanner4hr;

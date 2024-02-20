@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import TradeCard from './TradeCard';
 import ImageBanner from './ImageBanner';
+import ImageBanner4hr from './ImageBanner4hr';
 
 const Trades = () => {
   const data = require('../data/chartData2.json');
@@ -63,20 +64,24 @@ const Trades = () => {
       </div>
 
       <ImageBanner filteredData={filteredData} selectedRow={selectedRow} handleRowClick={handleRowClick} />
-              
+      <ImageBanner4hr filteredData={filteredData} selectedRow={selectedRow} handleRowClick={handleRowClick} />
+
       <div className="container mx-auto overflow-auto">
         {/* Toggle between table and card views */}
         {filteredData.length > 0 ? (
           <>
             <div className="flex overflow-x-auto p-2">
-              {filteredData.map((chart: any) => (
-                <TradeCard
-                  key={chart.id}
-                  chart={chart}
-                  selected={chart.id === selectedRow}
-                  onClick={() => handleRowClick(chart.id)}
-                />
-              ))}
+              {filteredData
+                .slice() // Make a copy of the array to avoid mutating the original
+                .sort((a: any, b: any) => parseInt(b.id) - parseInt(a.id)) // Sort in descending order based on the id
+                .map((chart: any) => (
+                  <TradeCard
+                    key={chart.id}
+                    chart={chart}
+                    selected={chart.id === selectedRow}
+                    onClick={() => handleRowClick(chart.id)}
+                  />
+                ))}
             </div>
           </>
         ) : (
