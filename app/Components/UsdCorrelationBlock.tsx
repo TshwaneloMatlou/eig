@@ -62,8 +62,8 @@ const UsdCorrelationBlock: React.FC<UsdCorrelationBlockProps> = ({ chart, select
   return (
     <div className={`border border-gray-300 shadow-md rounded-md overflow-hidden mx-2 my-2 py-8 ${selected ? 'bg-gray-200' : 'hover:bg-gray-200'}`}>
       <div className="p-4 relative">
-        <div className="bg-black font-bold text-center text-white rounded-2xl">{chart.id} - {chart.pair}</div>
-        <p className='text-center'>{chart.date}</p>
+        <div className="bg-black font-bold text-center text-white rounded-2xl">{chart.pair}</div>
+        <p className='text-center font-extrabold text-red-500 underline'>{chart.date}</p>
         <p className='text-center whitespace-pre-line'>{chart.description}</p>
         <div>
           {/* Render the image */}

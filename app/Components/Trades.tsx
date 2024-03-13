@@ -63,8 +63,10 @@ const Trades = () => {
         </div>
       </div>
 
+      {/*
       <ImageBanner filteredData={filteredData} selectedRow={selectedRow} handleRowClick={handleRowClick} />
-      <ImageBanner4hr filteredData={filteredData} selectedRow={selectedRow} handleRowClick={handleRowClick} />
+      <ImageBanner4hr filteredData={filteredData} selectedRow={selectedRow} handleRowClick={handleRowClick} /> 
+      */}
 
       <div className="container mx-auto overflow-auto">
         {/* Toggle between table and card views */}

@@ -6,8 +6,8 @@ interface Chart {
   // Add other properties here
 }
 
-const UsdCorrelation = () => {
-  const data = require('../data/UsdCorrelation.json');
+const GbpCorrelation = () => {
+  const data = require('../data/GbpCorrelation.json');
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   const [filteredData, setFilteredData] = useState<Chart[]>([]); // Type annotation for filteredData
@@ -17,7 +17,7 @@ const UsdCorrelation = () => {
     // Sort the initial data in ascending order based on chart id
     const sortedData = [...data.charts].sort((a: any, b: any) => parseInt(b.id) - parseInt(a.id));
     // Display only the first 4 charts
-    const initialCharts = sortedData.slice(0, 6);
+    const initialCharts = sortedData.slice(0, 4);
     setFilteredData(initialCharts);
   }, []);
 
@@ -33,15 +33,14 @@ const UsdCorrelation = () => {
       return chartDateWithoutTime >= startWithoutTime && chartDateWithoutTime <= endWithoutTime;
     });
     // Sort the filtered data in ascending order based on chart id
-    filtered.sort((a: any, b: any) => parseInt(b.id) - parseInt(a.id));
-    setFilteredData(filtered.slice(0, 6)); // Display only the first 6 filtered charts
+    filtered.sort((a: any, b: any) => parseInt(a.id) - parseInt(b.id));
+    setFilteredData(filtered.slice(0, 4)); // Display only the first 4 filtered charts
   };
 
   const handleReset = () => {
     setStartDate('');
     setEndDate('');
-    const sortedData = [...data.charts].sort((a: any, b: any) => parseInt(b.id) - parseInt(a.id));
-    setFilteredData(sortedData.slice(0, 6)); // Reset to display the first 6 charts
+    setFilteredData(data.charts.slice(0, 4)); // Reset to display the first 4 charts
   };
 
   const handleRowClick = (id: string) => {
@@ -104,4 +103,4 @@ const UsdCorrelation = () => {
   );
 };
 
-export default UsdCorrelation;
+export default GbpCorrelation;

@@ -1,0 +1,27 @@
+{
+    "charts": [
+      {
+        "id": 1,
+        "pair": "GBP",
+        "description": "Red Line = Month Open Price. \n Blue Line = 3000 Points {$30}. \n 500 points {$5} distance between Lines.",
+        "date": "2024/02/02",
+        "chartCode": "DXY_2023OCT28", 
+        "updated": "No",
+        "profitLoss": "Profit",
+        "weeklyImages": ["2024Feb5_GroupJPY_DailyEig_4hr.JPG"],
+        "weeklyDescription": "N/A",
+        "width": 881,
+        "height": 1917,
+        "dailyImages": ["2023Oct28_Dxy_Daily.JPG"],
+        "dailyDescription": "N/A",
+        "hours4Images": ["2023Oct28_Dxy_4hr.JPG"],
+        "hours4Description": "N/A",
+        "hour1Images": ["2023Oct28_Dxy_1hr.JPG"],
+        "hour1Description": "N/A",
+        "minutes30Images": [],
+        "minutes30Description": "N/A",
+        "minutes15Images": [],
+        "minutes15Description": "N/A"
+      }
+    ]
+}
