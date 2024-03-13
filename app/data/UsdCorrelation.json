@@ -3,9 +3,8 @@
       {
         "id": 1,
         "pair": "NZD",
-        "description": "Red Line = Month Open Price. \n Blue Line = 3000 Points {$30}. \n 500 points {$5} distance between Lines.",
+        "description": "Red Line = Month Open Price. \n Blue Line = 3000 Points {$30}. \n 500 points {$5} distance between Lines. \n ",
         "date": "2024/03/12",
-        "chartCode": "NZD_2024Mar12", 
         "weeklyImages": ["1_NoData.png"],
         "weeklyDescription": "N/A"
       },
@@ -14,7 +13,6 @@
         "pair": "AUD",
         "description": "Red Line = Month Open Price. \n Blue Line = 3000 Points {$30}. \n 500 points {$5} distance between Lines.",
         "date": "2024/03/12",
-        "chartCode": "AUD_2024Mar12", 
         "weeklyImages": ["1_NoData.png"],
         "weeklyDescription": "N/A"
       },
@@ -23,7 +21,6 @@
         "pair": "JPY",
         "description": "Red Line = Month Open Price. \n Blue Line = 3000 Points {$30}. \n 500 points {$5} distance between Lines.",
         "date": "2024/03/12",
-        "chartCode": "JPY_2024Mar12", 
         "weeklyImages": ["1_NoData.png"],
         "weeklyDescription": "N/A"
       },
@@ -32,7 +29,6 @@
         "pair": "EUR",
         "description": "Red Line = Month Open Price. \n Blue Line = 3000 Points {$30}. \n 500 points {$5} distance between Lines.",
         "date": "2024/03/12",
-        "chartCode": "EUR_2024Mar12", 
         "weeklyImages": ["1_NoData.png"],
         "weeklyDescription": "N/A"
       },
@@ -41,7 +37,6 @@
         "pair": "GBP",
         "description": "Red Line = Month Open Price. \n Blue Line = 3000 Points {$30}. \n 500 points {$5} distance between Lines.",
         "date": "2024/03/12",
-        "chartCode": "GBP_2024Mar12", 
         "weeklyImages": ["1_NoData.png"],
         "weeklyDescription": "N/A"
       },
@@ -50,7 +45,6 @@
         "pair": "USD",
         "description": "Red Line = Month Open Price. \n Blue Line = 3000 Points {$30}. \n 500 points {$5} distance between Lines.",
         "date": "2024/03/12",
-        "chartCode": "USD_2024Mar12", 
         "weeklyImages": ["DailyOpen_UsdGroup_2024Mar12_Daily.JPG"],
         "weeklyDescription": "N/A"
       }
