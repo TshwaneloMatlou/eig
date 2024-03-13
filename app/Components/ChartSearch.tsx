@@ -3,8 +3,6 @@ import Trades from './Trades'
 import UsdCorrelation from './UsdCorrelation'
 import ChartBanner from './ChartBanner'
 import EconomicCalendarWidget from './EconomicCalendarWidget'
-import GbpCorrelation from './GbpCorrelation'
-/** import MarketSentimentWidget from './MarketSentimentWidget' */
 /** import TradeChartsCards from './TradeChartsCards' */
 
 
@@ -23,9 +21,6 @@ const ChartSearch = () => {
         
         <h2 className="text-xl text-center font-extrabold rounded-3xl border-2 mt-8">Economic Calender</h2>
         <EconomicCalendarWidget />
-
-        {/* <h2 className="text-xl text-center font-extrabold rounded-3xl border-2 mt-8">Market Sentiment</h2>
-        <MarketSentimentWidget /> */}
 
         <h2 className="text-xl text-center font-extrabold bg-green-300 rounded-3xl border-2 border-red-500 mt-4 ">Trades</h2>
         <Trades />
