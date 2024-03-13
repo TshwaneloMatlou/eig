@@ -6,7 +6,7 @@
         "description": "Red Line = Month Open Price. \n Blue Line = 3000 Points {$30}. \n 500 points {$5} distance between Lines.",
         "date": "2024/03/12",
         "chartCode": "NZD_2024Mar12", 
-        "weeklyImages": ["1_NoData.PNG"],
+        "weeklyImages": ["1_NoData.png"],
         "weeklyDescription": "N/A"
       },
       {
@@ -15,7 +15,7 @@
         "description": "Red Line = Month Open Price. \n Blue Line = 3000 Points {$30}. \n 500 points {$5} distance between Lines.",
         "date": "2024/03/12",
         "chartCode": "AUD_2024Mar12", 
-        "weeklyImages": ["1_NoData.PNG"],
+        "weeklyImages": ["1_NoData.png"],
         "weeklyDescription": "N/A"
       },
       {
@@ -24,7 +24,7 @@
         "description": "Red Line = Month Open Price. \n Blue Line = 3000 Points {$30}. \n 500 points {$5} distance between Lines.",
         "date": "2024/03/12",
         "chartCode": "JPY_2024Mar12", 
-        "weeklyImages": ["1_NoData.PNG"],
+        "weeklyImages": ["1_NoData.png"],
         "weeklyDescription": "N/A"
       },
       {
@@ -33,7 +33,7 @@
         "description": "Red Line = Month Open Price. \n Blue Line = 3000 Points {$30}. \n 500 points {$5} distance between Lines.",
         "date": "2024/03/12",
         "chartCode": "EUR_2024Mar12", 
-        "weeklyImages": ["1_NoData.PNG"],
+        "weeklyImages": ["1_NoData.png"],
         "weeklyDescription": "N/A"
       },
       {
@@ -42,7 +42,7 @@
         "description": "Red Line = Month Open Price. \n Blue Line = 3000 Points {$30}. \n 500 points {$5} distance between Lines.",
         "date": "2024/03/12",
         "chartCode": "GBP_2024Mar12", 
-        "weeklyImages": ["1_NoData.PNG"],
+        "weeklyImages": ["1_NoData.png"],
         "weeklyDescription": "N/A"
       },
       {
